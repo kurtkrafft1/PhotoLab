@@ -10,11 +10,11 @@
     },
     {
       "id": 2,
-      "title": "Mount Fun",
-      "url": "https://www.colorado.com/sites/default/files/styles/1000x685/public/raspberry_mountain_credit_brianlewismedia_ig__fluid_0.jpg?itok=vOp5en6w",
+      "title": "Mount Fun test!",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "userId": 1,
-      "date": "12*05*1993"
+      "url": "https://www.colorado.com/sites/default/files/styles/1000x685/public/raspberry_mountain_credit_brianlewismedia_ig__fluid_0.jpg?itok=vOp5en6w",
+      "date": "12*05*1993",
+      "userId": 1
     },
     {
       "id": 3,
@@ -63,13 +63,14 @@
       "username": "JazzMaster_Krafft",
       "email": "kurt@kurt.com",
       "password": "kurt",
-      "confirmedPassword": "kurt",
+      "aboutMe": "Just a hip kid living in a hip world",
       "profPic": "https://www.rainforest-alliance.org/sites/default/files/styles/750w_585h/public/2016-09/three-toed-sloth.jpg?itok=uWF-NdZZ"
     },
     {
       "username": "JerrySmith",
       "email": "jerry@smith.com",
       "password": "j",
+      "aboutMe": "Just a hip kid living in a hip world",
       "profPic": "https://img1.looper.com/img/gallery/the-worst-thing-thats-ever-happened-to-jerry-on-rick-and-morty/intro-1567519981.jpg",
       "id": 2
     },
@@ -77,7 +78,7 @@
       "username": "q",
       "email": "q",
       "password": "q",
-      "confirmedPassword": "q",
+      "aboutMe": "Just a hip kid living in a hip world",
       "profPic": "https://vectorified.com/images/no-profile-picture-icon-14.png",
       "id": 3
     },
@@ -85,7 +86,7 @@
       "username": "sofia",
       "email": "Sof@sof.com",
       "password": "sofia",
-      "confirmedPassword": "sofia",
+      "aboutMe": "Just a hip kid living in a hip world",
       "profPic": "https://i.pinimg.com/originals/e8/39/d9/e839d986903a68a67df6dbbe6d9acda4.jpg",
       "id": 4
     },
@@ -93,7 +94,7 @@
       "username": "X",
       "email": "X",
       "password": "X",
-      "confirmedPassword": "X",
+      "aboutMe": "Just a hip kid living in a hip world",
       "profPic": "https://media.istockphoto.com/photos/letter-x-3d-red-isolated-on-white-with-shadow-orthogonal-projection-picture-id688121582?k=6&m=688121582&s=612x612&w=0&h=FoEMjfEgIM3VPaR_WTauid2Ek38bkOFYmdRm6OouSCA=",
       "id": 5
     }
@@ -102,47 +103,149 @@
     {
       "id": 1,
       "userId": 1,
-      "friendUserId": 2
+      "friendUserId": 2,
+      "statusId": 1
     },
     {
       "id": 2,
       "userId": 1,
-      "friendUserId": 3
+      "friendUserId": 3,
+      "statusId": 1
     },
     {
       "id": 3,
       "userId": 1,
-      "friendUserId": 4
+      "friendUserId": 4,
+      "statusId": 2
     },
     {
       "id": 4,
       "userId": 1,
-      "friendUserId": 5
+      "friendUserId": 5,
+      "statusId": 3
     },
     {
       "id": 5,
       "userId": 4,
-      "friendUserId": 5
+      "friendUserId": 5,
+      "statusId": 2
     },
     {
       "id": 6,
       "userId": 5,
-      "friendUserId": 5
+      "friendUserId": 5,
+      "statusId": 1
     },
     {
       "id": 7,
       "userId": 5,
-      "friendUserId": 3
+      "friendUserId": 3,
+      "statusId": 2
     },
     {
       "id": 8,
       "userId": 3,
-      "friendUserId": 2
+      "friendUserId": 2,
+      "statusId": 3
     },
     {
       "id": 9,
       "userId": 2,
-      "friendUserId": 5
+      "friendUserId": 5,
+      "statusId": 1
+    }
+  ],
+  "statuses": [
+    {
+      "id": 1,
+      "name": "approved"
+    },
+    {
+      "id": 2,
+      "name": "pending"
+    },
+    {
+      "id": 3,
+      "name": "rejected"
+    }
+  ],
+  "starredPhotos": [
+    {
+      "id": 1,
+      "photoId": 1,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "photoId": 2,
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "photoId": 3,
+      "userId": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "message": "This is a cool photo! nice work chief!",
+      "photoId": 1
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "photoId": 1,
+      "message": "Wow so neat!"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "photoId": 1,
+      "message": "Very artsy"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "message": "oh yeah this one, classic!",
+      "photoId": 2
+    },
+    {
+      "id": 5,
+      "userId": 3,
+      "photoId": 2,
+      "message": "wow this sucks bro"
+    },
+    {
+      "id": 6,
+      "userId": 5,
+      "photoId": 2,
+      "message": "yes"
+    },
+    {
+      "id": 7,
+      "userId": 4,
+      "photoId": 3,
+      "message": "booooooooooo"
+    },
+    {
+      "id": 8,
+      "userId": 2,
+      "photoId": 4,
+      "message": "Creek-shaw"
+    },
+    {
+      "id": 9,
+      "userId": 3,
+      "photoId": 5,
+      "message": "Wow, this is some bologna"
+    },
+    {
+      "id": 10,
+      "userId": 3,
+      "photoId": 6,
+      "message": "futspah!"
     }
   ]
 }

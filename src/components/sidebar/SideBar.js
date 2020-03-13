@@ -10,8 +10,8 @@ const Sidebar= props => {
         <a className = "menu-item" href="/myphotos">
             My Photos
         </a>
-        <a className = "menu-item" href="/friendsphotos">
-            Friends Photos
+        <a className = "menu-item" href="/friends">
+            Friends
         </a>
         <a className = "menu-item" href="/settings">
             Settings
@@ -19,7 +19,6 @@ const Sidebar= props => {
         <a className = "menu-item" href="/login">
             Login
         </a>
-
         </Menu>
     )
 }

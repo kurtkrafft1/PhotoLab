@@ -14,7 +14,7 @@ const Navbar = props => {
             <div className="navLinks">
             <NavLink className="navItem" to="/myphotos">My Photos</NavLink>
             <p className="bar">|</p>
-            <NavLink className="navItem" to="/friendsphotos">Friends Photos</NavLink>
+            <NavLink className="navItem" to="/friends">Friends</NavLink>
             <p className="bar">|</p>
             <NavLink className="navItem" to="/settings">Settings</NavLink>
             <p className="bar">|</p>
