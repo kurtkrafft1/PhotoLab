@@ -1,0 +1,75 @@
+.detail-icon-container{
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+.detail-card-photo{
+    min-width: 600px;
+    max-width: 600px;
+}
+.view-card{
+    display: flex;
+    justify-content: center;
+}
+.view-card-content{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    padding: 5%;
+    background-color: rgba(180, 180, 180, 0.281);
+}
+.photo-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 5%;
+    
+}
+.comment-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+
+}
+.comment-card-container{
+    height: 400px;
+    width: 300px;
+    overflow: scroll;
+}
+.comment-card{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border: 2px solid #dededed7;
+    background-color: #f1f1f1e8;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+
+}
+.comment-card h4{
+    margin-bottom: 0;
+}
+.user-name{
+    color: black;
+    font-size: small;
+}
+.comment-icons{
+    display: flex;
+    margin-top: 0;
+    align-self: flex-end;
+}
+.user-comment{
+     display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  

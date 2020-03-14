@@ -3,6 +3,7 @@ import PhotographyManager from '../../modules/PhotographyManager'
 import MyPhotoEditModal from "./MyPhotoEditForm";
 import { confirmAlert } from 'react-confirm-alert'; 
 import CommentCard from "./CommentCard.js";
+import "./MyPhotoDetails.css";
 
 const MyPhotoDetails = props => {
     const [photo, setPhoto] = useState({title: "", description: "", url:"", id:"", date:""})
@@ -10,9 +11,12 @@ const MyPhotoDetails = props => {
     const [ modalOpen, handleModal ] = useState(false);
     const [comments, setComments] = useState([])
     const [refreshComments, setRefreshComments] = useState(false)
+    const [newMessage, setNewMessage] = useState({})
     const toggleModal = () => {
         handleModal(!modalOpen)
     };
+    // const user= JSON.parse(sessionStorage.getItem('credentials'))
+    const user={id:1}
     
     const HandleDelete = () => {
         confirmAlert({
@@ -30,7 +34,28 @@ const MyPhotoDetails = props => {
             ]
           });
     }
+    const handleMessageChange = e=> {
+      const stateToChange = {...newMessage}
+      stateToChange[e.target.id] = e.target.value
+      setNewMessage(stateToChange)
+    }
+    const postNewMessage = e => {
+      e.preventDefault()
+      if(newMessage.message===""){
+        window.alert("please type a comment")
+      } else {
+        const newComment = {
+          message: newMessage.message,
+          photoId: props.photoId,
+          userId: user.id
+        }
+        console.log(newComment)
+        PhotographyManager.postNewComment(newComment).then(()=> {
+          setRefreshComments(!refreshComments)
 
+        })
+      }
+    }
 
     useEffect(()=> {
        
@@ -46,6 +71,7 @@ const MyPhotoDetails = props => {
     }).then(()=> {
       PhotographyManager.getCommentsForPhoto(props.photoId).then(commentsFromApi=> setComments(commentsFromApi))
       setRefreshComments(false)
+      setNewMessage({message:""})
      })
   },[refreshComments])
    
@@ -65,21 +91,23 @@ const MyPhotoDetails = props => {
         return (
             <>
             <div className="newRoot">
-                <div className="button-container">
+                <div className="detail-icon-container">
                 <i id="icons"className=" big arrow alternate circle left icon" onClick={()=> props.history.push("/myphotos")}></i>
                 {/* <i id="icons"className="big edit outline icon" onClick={()=> props.history.push(`/myphotos/${props.photoId}/edit`)}></i> */}
                 <MyPhotoEditModal toggleModal={toggleModal} photoId={props.photoId} {...props}  modalOpen={modalOpen}/>
          
                 
                 </div>
-            <div className="Viewcard">
-                <div className="Viewcard-content">
+            <div className="view-card">
+                <div className="view-card-content">
                     <picture className="dets-pic">
-                        <img src={photo.url} alt="photo" className="card-photo"/>
+                        <img src={photo.url} alt="photo" className="detail-card-photo"/>
                     </picture>
+                    <div className="photo-info">
         <h2><em>{photo.title}</em></h2>
         <h6>{photo.description}</h6>
         <p>{photo.date}</p>
+        </div>
         <div className="icons">
                 <i className="trash alternate outline icon" onClick={HandleDelete}></i>
                 </div>
@@ -87,17 +115,26 @@ const MyPhotoDetails = props => {
                 </div>
                
                <div className="comment-container">
+                 <div className="comment-header"><h1>Comments...</h1></div>
                  <div className="comment-card-container">
                    {
                      comments.map(comment=> {
                        return <CommentCard key={comment.id} comment={comment} refreshComments={refreshComments} setRefreshComments={setRefreshComments}/>
                      })
                    }
+                 
                  </div>
+                 <div className="message-input-container">
+                     <input type="text" id="message" onChange={handleMessageChange} placeholder="New Comments"value={newMessage.message}/>
+                     <div>
+                     <i class="paper plane outline icon"onClick={postNewMessage}></i>
+                     </div>
+                   </div>
                </div>
+               
             </div>
             </>
         )
     }
 }
-export default MyPhotoDetails
+export default MyPhotoDetails;
