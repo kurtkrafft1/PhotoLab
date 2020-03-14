@@ -1,17 +1,11 @@
-const remoteUrl = "http://localhost:5002/"
+const remoteUrl = "http://localhost:5002"
 
 export default {
-    getAllApprovedFriendsByUserId(id) {
-        return fetch(`${remoteUrl}/friends?userId=${id}&statusId=1`).then(r=>r.json())
-    },
-    getAllApprovedFriendsByFriendUserId(id){
-        return fetch(`${remoteUrl}/friends?friendUserId=${id}&statusId=1`).then(r=>r.json())
+    getAllApprovedFriendsByActiveUserId(id) {
+        return fetch(`${remoteUrl}/friends?activeUserId=${id}&statusId=1&_expand=user`).then(r=>r.json())
     },
     getAllRequestedFriendsbyUserId(id) {
-        return fetch(`${remoteUrl}/friends?userId=${id}&statusId=2`).then(r=>r.json())
-    },
-    getAllRequestedFriendsbyFriendUserId(id) {
-        return fetch(`${remoteUrl}/friends?friendUserId=${id}&statusId=2`).then(r=>r.json())
+        return fetch(`${remoteUrl}/friends?activeUserId=${id}&statusId=2&_expand=user`).then(r=>r.json())
     },
     makeNewFriendRequest(obj){
         return fetch(`${remoteUrl}/friends`,{
@@ -30,6 +24,14 @@ export default {
             },
             body: JSON.stringify(obj)
         }).then(r=>r.json())
+    },
+    deleteFriend(id){
+        return fetch(`${remoteUrl}/friends/${id}`, {
+            method: "DELETE",
+        }).then(r=> r.json())
+    },
+    getOneFriendByActiveUserIdAndUserId(activeUserId, userId) {
+        return fetch(`${remoteUrl}/friends?activeUserId=${userId}&userId=${activeUserId}`).then(r=>r.json())
     }
     
 }

@@ -2,52 +2,70 @@ import React, { useState, useEffect } from "react";
 import PhotographyManager from "../../modules/PhotographyManager";
 import MyPhotoCard from "./MyPhotoCard";
 import NewPhotoModal from "./NewPhotoModal";
+import "./MyPhotos.css";
 
-const  MyPhotoList = (props) => {
-    const [photos, setPhotos] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
-    const [modalOpen, setModalOpen] = useState(false)
-    const [refreshPhotos, setRefreshPhotos] = useState(false)
-    // const user = JSON.parse(sessionStorage.getItem('credentials'))
-    const user={id:1};
-    
+const MyPhotoList = props => {
+  const [photos, setPhotos] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [refreshPhotos, setRefreshPhotos] = useState(false);
+  // const user = JSON.parse(sessionStorage.getItem('credentials'))
+  const user = { id: 1 };
 
-    const toggleModal = ()=> {
-        setModalOpen(!modalOpen)
-        setRefreshPhotos(!refreshPhotos)
-    }
-    const getAllPhotos=()=> {
-        setIsLoading(true)
-        PhotographyManager.getAllWithId(user.id).then(photosFromApi=> {
-            setPhotos(photosFromApi)
-            setIsLoading(false)
-        })
-    }
-    
-    useEffect(()=> {
-        getAllPhotos()
-        setRefreshPhotos(false)
-    },[refreshPhotos])
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+    setRefreshPhotos(!refreshPhotos);
+  };
+  const getAllPhotos = () => {
+    setIsLoading(true);
+    PhotographyManager.getAllWithId(user.id).then(photosFromApi => {
+      setPhotos(photosFromApi);
+      setIsLoading(false);
+    });
+  };
 
-    return (
-        <>
-            <div className="card-container">
-                <div className="icon-container"> <div className="button-container">
-      <i id="icons"className=" big arrow alternate circle left icon" onClick={()=> props.history.push("/")}></i>
-{/* <i id="icons"className=" big plus square outline icon" onClick={()=> props.history.push("myphotos/new")}></i> */}
-<NewPhotoModal toggleModal={toggleModal} modalOpen={modalOpen} {...props} refreshPhotos={refreshPhotos} setPhotos={setPhotos}/>
+  useEffect(() => {
+    getAllPhotos();
+    setRefreshPhotos(false);
+  }, [refreshPhotos]);
 
-</div></div>
-               
-    {photos.map(photo=> (
-        
-    <MyPhotoCard key={photo.id} photo={photo} setRefreshPhotos={setRefreshPhotos}{...props}/>))}
-     
-                
-
-            </div>
-        </>
-    )
-}
+  return (
+    <>
+      <div className="container-header">
+        <h1>My Photos...</h1>
+      </div>
+  
+        <div className="icon-container">
+          {" "}
+          <div className="button-container">
+            <i
+              id="icons"
+              className=" big arrow alternate circle left icon"
+              onClick={() => props.history.push("/")}
+            ></i>
+            {/* <i id="icons"className=" big plus square outline icon" onClick={()=> props.history.push("myphotos/new")}></i> */}
+            <NewPhotoModal
+              toggleModal={toggleModal}
+              modalOpen={modalOpen}
+              {...props}
+              refreshPhotos={refreshPhotos}
+              setPhotos={setPhotos}
+            />
+  
+        </div>
+        <div className="card-container">
+        {photos.map(photo => (
+          <MyPhotoCard
+            key={photo.id}
+            photo={photo}
+            setRefreshPhotos={setRefreshPhotos}
+            {...props}
+          />
+        ))}
+      </div>
+      </div>
+    </>
+  );
+};
 
 export default MyPhotoList;

@@ -1,6 +1,6 @@
 import React from "react";
 import withRouter, { NavLink} from "react-router-dom"
-
+import './NavBar.css';
 
 const Navbar = props => {
     return (
@@ -8,6 +8,7 @@ const Navbar = props => {
              <div className="userInfo">
             
             </div>
+            <div className="bar">
             <NavLink to="/">
             <h1>PH<i className="camera retro icon"></i>TOLAB</h1>
             </NavLink>
@@ -20,6 +21,7 @@ const Navbar = props => {
             <p className="bar">|</p>
             <NavLink className="navItem" to="/login">Logout</NavLink>
        
+            </div>
             </div>
            
         </header>

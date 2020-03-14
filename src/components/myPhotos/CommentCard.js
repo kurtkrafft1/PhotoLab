@@ -15,18 +15,20 @@ const CommentCard = props => {
     }
     if(user.id===props.comment.userId){
         return(
-            <div className="comment-card">
-                <h2>{props.comment.message}</h2>
-                <p className="light-text small">{props.comment.user.username}</p>
+            <div className="user-comment">
+
+                <p className="light-text small user-comment"><span className="user-name">{props.comment.user.username}:</span>{props.comment.message}</p>
+                <div className="comment-icons">
                 <i className="small trash alternate outline icon" onClick={()=> HandleCommentDelete(props.comment.id)}></i>
                 <EditCommentModal toggleCommentModal={toggleCommentModal} commentModalOpen={commentModalOpen} commentId={props.comment.id} />
+                </div>
             </div>
         )
     }else {
         return(
             <div className="comment-card">
-            <h2>{props.comment.message}</h2>
-            <p className="light-text small">{props.comment.user.username}</p>
+            <h4></h4>
+            <p className="light-text small"><span className="user-name">{props.comment.user.username}:</span>{props.comment.message}</p>
         </div>
         )
 

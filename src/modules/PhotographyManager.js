@@ -52,5 +52,14 @@ export default {
     },
     getOneComment(id){
         return fetch(`${remoteUrl}comments/${id}`).then(r=>r.json())
+    },
+    postNewComment(obj){
+        return fetch(`${remoteUrl}comments`, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        }).then(r=>r.json())
     }
 }

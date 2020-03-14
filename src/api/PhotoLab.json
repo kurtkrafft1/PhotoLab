@@ -55,6 +55,15 @@
       "url": "https://s7d6.scene7.com/is/image/bjs/22203?$bjs-Zoom$",
       "id": 9,
       "date": "12*05*1993"
+    },
+    {
+      "userId": 1,
+      "title": "Walls",
+      "description": "Austin, Texas",
+      "url": "https://res.cloudinary.com/dgfnzsyga/image/upload/v1584129966/photoLab/w93gsavpbnwidk6msznx.jpg",
+      "date": 1584129968310,
+      "likes": 1,
+      "id": 10
     }
   ],
   "users": [
@@ -102,56 +111,110 @@
   "friends": [
     {
       "id": 1,
+      "activeUserId": 1,
+      "userId": 2,
+      "statusId": 1
+    },
+    {
+      "id": 10,
+      "activeUserId": 2,
       "userId": 1,
-      "friendUserId": 2,
       "statusId": 1
     },
     {
       "id": 2,
+      "activeUserId": 1,
+      "userId": 3,
+      "statusId": 1
+    },
+    {
+      "id": 11,
+      "activeUserId": 3,
       "userId": 1,
-      "friendUserId": 3,
       "statusId": 1
     },
     {
       "id": 3,
+      "activeUserId": 1,
+      "userId": 4,
+      "statusId": 2
+    },
+    {
+      "id": 12,
+      "activeUserId": 4,
       "userId": 1,
-      "friendUserId": 4,
       "statusId": 2
     },
     {
       "id": 4,
-      "userId": 1,
-      "friendUserId": 5,
+      "activeUserId": 1,
+      "userId": 5,
       "statusId": 3
     },
     {
+      "id": 13,
+      "activeUserId": 5,
+      "userId": 1,
+      "statusId": 1
+    },
+    {
       "id": 5,
+      "activeUserId": 4,
+      "userId": 5,
+      "statusId": 2
+    },
+    {
+      "id": 14,
+      "activeUserId": 5,
       "userId": 4,
-      "friendUserId": 5,
       "statusId": 2
     },
     {
       "id": 6,
+      "activeUserId": 1,
       "userId": 5,
-      "friendUserId": 5,
+      "statusId": 1
+    },
+    {
+      "id": 15,
+      "activeUserId": 5,
+      "userId": 2,
       "statusId": 1
     },
     {
       "id": 7,
+      "activeUserId": 5,
+      "userId": 3,
+      "statusId": 2
+    },
+    {
+      "id": 16,
+      "activeUserId": 3,
       "userId": 5,
-      "friendUserId": 3,
       "statusId": 2
     },
     {
       "id": 8,
+      "activeUserId": 3,
+      "userId": 2,
+      "statusId": 3
+    },
+    {
+      "id": 17,
+      "activeUserId": 2,
       "userId": 3,
-      "friendUserId": 2,
       "statusId": 3
     },
     {
       "id": 9,
+      "activeUserId": 2,
+      "userId": 5,
+      "statusId": 1
+    },
+    {
+      "id": 18,
+      "activeUserId": 5,
       "userId": 2,
-      "friendUserId": 5,
       "statusId": 1
     }
   ],
@@ -246,6 +309,66 @@
       "userId": 3,
       "photoId": 6,
       "message": "futspah!"
+    },
+    {
+      "message": "a",
+      "photoId": 1,
+      "userId": 1,
+      "id": 11
+    },
+    {
+      "message": "a",
+      "photoId": 1,
+      "userId": 1,
+      "id": 12
+    },
+    {
+      "message": "a",
+      "photoId": 1,
+      "userId": 1,
+      "id": 13
+    },
+    {
+      "message": "as",
+      "photoId": 1,
+      "userId": 1,
+      "id": 14
+    },
+    {
+      "message": "as",
+      "photoId": 1,
+      "userId": 1,
+      "id": 15
+    },
+    {
+      "message": "a",
+      "photoId": 1,
+      "userId": 1,
+      "id": 16
+    },
+    {
+      "message": "asdf",
+      "photoId": 1,
+      "userId": 1,
+      "id": 17
+    },
+    {
+      "message": "asdfasdf",
+      "photoId": 1,
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "message": "Wow, so cool. Love yourself",
+      "photoId": 10,
+      "userId": 1,
+      "id": 19
+    },
+    {
+      "message": "I dont know how I feel about this one",
+      "photoId": 10,
+      "userId": 1,
+      "id": 20
     }
   ]
 }

@@ -4,35 +4,35 @@ import PhotographyManager from "../../modules/PhotographyManager";
 import keys from "../../keys/ApiKies";
 
 const NewPhotoModal = props => {
-  const [newPhoto, setNewPhoto] = useState({title:"", description:"", url:"", date:"", userId:"", likes:""});
-  // const [image, setImage] = useState({url: ""})
+  const [newPhoto, setNewPhoto] = useState({title:"", description:"",date:"", userId:"", likes:""});
+  const [image, setImage] = useState({url: ""})
   const [isLoading, setIsLoading] = useState(false);
   // const user= JSON.parse(sessionStorage.getItem('credentials'))
   const user={id:1}
 
   const handleFieldChange = e => {
-    const stateToChange = { ...newPhoto };
+    const stateToChange = {...newPhoto};
     stateToChange[e.target.id] = e.target.value;
     setNewPhoto(stateToChange);
   };
   const postNewPhoto = e => {
       e.preventDefault()
-      if(newPhoto.title===""||newPhoto.url===""){
+      if(newPhoto.title===""||image.url===""){
       window.alert("Please fill out the title and upload an image")
       }else {
         const photo={
           userId: user.id,
-          title:newPhoto.title,
+          title: newPhoto.title,
           description: newPhoto.description,
-          url:newPhoto.url,
+          url: image.url,
           date: Date.now(),
           likes: 1,
         }
-        console.log(photo)
+        setImage({url:""})
         PhotographyManager.postNewphoto(photo).then(
           
-            props.toggleModal
-    
+            props.toggleModal,
+            setNewPhoto({url:"https://seeba.se/wp-content/themes/consultix/images/no-image-found-360x260.png"})
          
         );
       }
@@ -49,26 +49,23 @@ const NewPhotoModal = props => {
       {
         method: "POST",
         body: data
-      }
+      } 
     );
     const file = await res.json();
-    setNewPhoto({ url: file.secure_url });
+    setImage({ url: file.secure_url });
     setIsLoading(false);
   };
   return (
     <Modal id="signup-modal" open={props.modalOpen} trigger={ <i id="icons"className=" big plus square outline icon" onClick={props.toggleModal}></i>}>
-        <Modal.Header>Edit Photo</Modal.Header>
+        <Modal.Header>Add New Photo</Modal.Header>
          <Modal.Content>
             <Form>
                 <Form.Group widths='equal'>
-                    <Form.Field
-                        id='title'
-                        control={Input}
-                        label='Title'
-                        placeholder='Title...'
-                        onChange={handleFieldChange}
-                     
-                    />
+                    <Form.Field>
+                        <label htmlFor="title">Title</label>
+                         <input type="text" id="title" placeholder="Title..." onChange={handleFieldChange}/>
+
+                        </Form.Field>
                 </Form.Group>
                 <Form.Field
                         id='description'
@@ -94,10 +91,10 @@ const NewPhotoModal = props => {
       {isLoading ? (
         <h3> Loading...</h3>
       ) : (
-        newPhoto.url==="" ? (
+        image.url==="" ? (
           <img src="https://seeba.se/wp-content/themes/consultix/images/no-image-found-360x260.png" style={{width: '300px'}}alt="none-found" />
         ) :(
-        <img src={newPhoto.url} style={{width: '300px'}}alt="upload-photos" />)
+        <img src={image.url} style={{width: '300px'}}alt="upload-photos" />)
       )}
     </div>
             </Form>
@@ -110,3 +107,10 @@ const NewPhotoModal = props => {
 )
 };
 export default NewPhotoModal;
+
+
+  // id='title'
+                        // control={Input}
+                        // label='Title'
+                        // placeholder='Title...'
+                        // onChange={handleFieldChange}
