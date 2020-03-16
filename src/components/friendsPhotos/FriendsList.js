@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FriendsManager from "../../modules/FriendsManager";
 import FriendCard from "./FriendCard";
+import "./Friends.css"
 
 const FriendsList = props => {
   const [friends, setFriends] = useState([]);
@@ -35,19 +36,22 @@ const FriendsList = props => {
 
   return (
     <>
+    <div className="center-page">
       <h1 className="page-title">Friends...</h1>
       <div className="icon-container"></div>
       <div className="friend-container">
         {friends.map(friend => {
+            console.log(friend)
           return (
             <FriendCard
               friend={friend}
-              key={friend.id}
+              key={friend.user.id}
               {...props}
               handleDelete={handleDelete}
             />
           );
         })}
+      </div>
       </div>
     </>
   );
