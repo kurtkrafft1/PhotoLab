@@ -4,8 +4,10 @@ import MyPhotoList from "./myPhotos/MyPhotoList";
 import MyPhotoDetails from "./myPhotos/MyPhotoDetails";
 import FriendsList from "./friendsPhotos/FriendsList";
 import FriendsPhotoList from "./friendsPhotos/FriendsPhotoList";
-import HomeList from "../home/HomeList";
 import FriendsPhotoDetails from "./friendsPhotos/FriendsPhotoDetails"
+import HomeList from "../home/HomeList";
+import ExploreList from "./explore/ExploreList";
+
 
 const ApplicationViews = () => {
     
@@ -47,6 +49,12 @@ const ApplicationViews = () => {
         exact path = "/friends/photos/details/:photoId(\d+)"
         render={props=> {
             return <FriendsPhotoDetails photoId={parseInt(props.match.params.photoId)} {...props} />
+        }}
+        />
+        <Route 
+        exact path = "/explore"
+        render={props => {
+            return <ExploreList {...props} />
         }}
         />
         
