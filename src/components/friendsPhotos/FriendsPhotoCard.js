@@ -11,7 +11,7 @@ const FriendsPhotoCard = props => {
                     props.history.push(`/friends/photos/details/${props.photo.id}`)
                 }}/>
             </picture>
-            <h2>{props.photo.title}</h2>
+            <h5>{props.photo.title}</h5>
         </div>
         
         </>

@@ -4,6 +4,9 @@
     flex-direction: column;    
     align-items: center;
 }
+.no-top{
+    margin-top: 50px;
+}
 .friend-container{
     display: flex;
     flex-direction: row;

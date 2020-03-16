@@ -13,8 +13,8 @@ const Sidebar= props => {
         <a className = "menu-item" href="/friends">
             Friends
         </a>
-        <a className = "menu-item" href="/settings">
-            Settings
+        <a className = "menu-item" href="/explore">
+            Explore
         </a>
         <a className = "menu-item" href="/login">
             Login

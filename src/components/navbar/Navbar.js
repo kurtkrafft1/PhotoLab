@@ -17,7 +17,7 @@ const Navbar = props => {
             <p className="bar">|</p>
             <NavLink className="navItem" to="/friends">Friends</NavLink>
             <p className="bar">|</p>
-            <NavLink className="navItem" to="/settings">Settings</NavLink>
+            <NavLink className="navItem" to="/explore">Explore</NavLink>
             <p className="bar">|</p>
             <NavLink className="navItem" to="/login">Logout</NavLink>
        

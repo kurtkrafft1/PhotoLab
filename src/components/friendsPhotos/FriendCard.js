@@ -2,8 +2,8 @@ import React from "react";
 
 const FriendCard = props => {
     return (
-        <div className="friend-card" onClick={() => {props.history.push(`friends/photos/${props.friend.user.id}`)}}>
-            <div className="friend-card-info">
+        <div className="friend-card" >
+            <div className="friend-card-info" onClick={() => {props.history.push(`friends/photos/${props.friend.user.id}`)}}>
             <picture>
                 <img src={props.friend.user.profPic} alt="friends profile" className="friend-profile-pic"/>
             </picture>
