@@ -91,7 +91,7 @@ const MyPhotoDetails = props => {
         return (
             <>
             <div className="newRoot">
-                <div className="detail-icon-container">
+                <div className="detail button-container">
                 <i id="icons"className=" big arrow alternate circle left icon" onClick={()=> props.history.push("/myphotos")}></i>
                 {/* <i id="icons"className="big edit outline icon" onClick={()=> props.history.push(`/myphotos/${props.photoId}/edit`)}></i> */}
                 <MyPhotoEditModal toggleModal={toggleModal} photoId={props.photoId} {...props}  modalOpen={modalOpen}/>
@@ -127,7 +127,7 @@ const MyPhotoDetails = props => {
                  <div className="message-input-container">
                      <input type="text" id="message" onChange={handleMessageChange} placeholder="New Comments"value={newMessage.message}/>
                      <div>
-                     <i class="paper plane outline icon"onClick={postNewMessage}></i>
+                     <div className="send-div" onClick={postNewMessage}><i className="big paper plane outline icon"></i></div>
                      </div>
                    </div>
                </div>

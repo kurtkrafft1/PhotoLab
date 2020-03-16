@@ -3,6 +3,7 @@ import React from "react";
 import MyPhotoList from "./myPhotos/MyPhotoList";
 import MyPhotoDetails from "./myPhotos/MyPhotoDetails";
 import FriendsList from "./friendsPhotos/FriendsList";
+import FriendsPhotoList from "./friendsPhotos/FriendsPhotoList";
 import HomeList from "../home/HomeList";
 
 
@@ -34,6 +35,12 @@ const ApplicationViews = () => {
         exact path="/"
         render={props=> {
             return <HomeList {...props}/>
+        }}
+        />
+        <Route 
+        exact path = "/friends/photos/:friendId(\d+)"
+        render={props=> {
+            return <FriendsPhotoList friendId={parseInt(props.match.params.friendId)} {...props} />
         }}
         />
         </>

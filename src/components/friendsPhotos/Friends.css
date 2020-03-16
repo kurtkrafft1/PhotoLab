@@ -1,0 +1,47 @@
+.center-page{
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+}
+.friend-container{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 1px solid rgba(131, 128, 128, 0.274);
+    background-image: linear-gradient(to bottom , rgba(131, 128, 128, 0.274) , rgba(255, 255, 255, 0.932));
+    padding: 2%;
+}
+.friend-profile-pic{
+    min-width: 50px;
+    max-width: 50px;
+     
+}
+.friend-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 45%;
+    border: solid 2px rgba(131, 128, 128, 0.274);
+    padding: 1%;
+    margin-bottom: 1.5%;
+    background-image: linear-gradient( rgba(180, 218, 231, 0.397), rgba(217, 238, 245, 0.281));
+    -webkit-box-shadow: 1px 1px 5px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 5px 2px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 5px 2px #ccc;
+}
+.friend-card-info{
+    display: flex;
+    flex-direction: row;
+}
+.unfollow-container{
+    align-self: flex-end;
+    justify-self: flex-start;
+    margin: 0;
+}
+.friend-card picture{
+    margin:0;
+    margin-right: 5%;
+}
