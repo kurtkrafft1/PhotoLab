@@ -9,10 +9,13 @@ const FriendsPhotoList = props => {
 
     useEffect(()=> {
         PhotographyManager.getAllWithId(props.friendId).then(photosFromApi=> {
+            console.log('friends photos', photosFromApi)
             setFriendsPhotos(photosFromApi)
         }).then(()=> {
+            console.log(props.friendId)
             UserManager.getUserInfo(props.friendId).then(friendFromAPi=> {
-                setFriend(friendFromAPi)
+                console.log(friendFromAPi)
+                setFriend(friendFromAPi[0])
             })
         })
     },[props.friendId])
@@ -39,7 +42,7 @@ const FriendsPhotoList = props => {
         </div>
         <div className="friend-photos-container">
             {friendsPhotos.map(photo=> {
-                return <FriendsPhotoCard key={photo.id} photo={photo} />
+                return <FriendsPhotoCard key={photo.id} photo={photo} {...props}/>
             })}
         </div>
         </>

@@ -41,10 +41,11 @@ const FriendsList = props => {
       <div className="icon-container"></div>
       <div className="friend-container">
         {friends.map(friend => {
+            console.log(friend)
           return (
             <FriendCard
               friend={friend}
-              key={friend.id}
+              key={friend.user.id}
               {...props}
               handleDelete={handleDelete}
             />

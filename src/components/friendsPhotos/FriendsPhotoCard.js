@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from "react"
-import ViewFriendPhotoModal from "./ViewFriendPhotoModal";
+
 
 const FriendsPhotoCard = props => {
-    const [photoModalOpen, setPhotoModalOpen] = useState(false)
-    
-    const togglePhotoModal = ()=> {
-        setPhotoModalOpen(!photoModalOpen)
-    }
+  
     return (
         <>
         <div className="friendPhoto">
-            <ViewFriendPhotoModal photo={props.photo} setPhotoModalOpen={setPhotoModalOpen} togglePhotoModal={togglePhotoModal} photoModalOpen={photoModalOpen} {...props}/>
+        <picture>
+                <img src={props.photo.url} alt={props.photo.title} id="friends-photo-thumbnail" onClick={()=> {
+                    props.history.push(`/friends/photos/details/${props.photo.id}`)
+                }}/>
+            </picture>
             <h2>{props.photo.title}</h2>
         </div>
         

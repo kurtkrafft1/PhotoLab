@@ -5,7 +5,7 @@ import MyPhotoDetails from "./myPhotos/MyPhotoDetails";
 import FriendsList from "./friendsPhotos/FriendsList";
 import FriendsPhotoList from "./friendsPhotos/FriendsPhotoList";
 import HomeList from "../home/HomeList";
-
+import FriendsPhotoDetails from "./friendsPhotos/FriendsPhotoDetails"
 
 const ApplicationViews = () => {
     
@@ -26,7 +26,7 @@ const ApplicationViews = () => {
         }}
         />
         <Route
-        path="/friends"
+        exact path="/friends"
         render={props=> {
             return <FriendsList {...props} />
         }}
@@ -43,6 +43,13 @@ const ApplicationViews = () => {
             return <FriendsPhotoList friendId={parseInt(props.match.params.friendId)} {...props} />
         }}
         />
+        <Route 
+        exact path = "/friends/photos/details/:photoId(\d+)"
+        render={props=> {
+            return <FriendsPhotoDetails photoId={parseInt(props.match.params.photoId)} {...props} />
+        }}
+        />
+        
         </>
 
     )
