@@ -3,13 +3,16 @@ import HomeCard from "./HomeCard";
 import "./Home.css";
 const HomeList = (props) => {
 
-//   if(props.hasUser) {
-//     return (
-//       <div className="home-container">
-//           <HomeCard {...props}/>
-//       </div>
-//     );
-//   } else {
+  if(props.hasUser) {
+    return (
+      <div className="home-container">
+          <HomeCard {...props}/>
+          <div className="button-container">
+          <button type="button" className="ui inverted primary button" onClick={()=> props.history.push('/explore')}>Explore</button>
+          </div>
+      </div>
+    );
+  } else {
   return (
     <div className="home-container">
         <HomeCard />
@@ -20,7 +23,7 @@ const HomeList = (props) => {
         </div>
     </div>
   );
-//   }
+  }
 };
 
 export default HomeList;

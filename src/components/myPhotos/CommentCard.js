@@ -4,8 +4,8 @@ import EditCommentModal from "./EditCommentModal";
 
 const CommentCard = props => {
     const [commentModalOpen, setCommentModalOpen] = useState(false)
-    // const user = JSON.parse(sessionStorage.getItem('credentials'))
-    const user={id:1}
+    const user = JSON.parse(sessionStorage.getItem('credentials'))
+    // const user={id:1}
     const HandleCommentDelete = (id) => {
         PhotographyManager.deleteComment(id).then(()=> props.setRefreshComments(!props.refreshComments))
     }

@@ -9,8 +9,8 @@ const MyPhotoList = props => {
   const [isLoading, setIsLoading] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [refreshPhotos, setRefreshPhotos] = useState(false);
-  // const user = JSON.parse(sessionStorage.getItem('credentials'))
-  const user = { id: 1 };
+  const user = JSON.parse(sessionStorage.getItem('credentials'))
+  // const user = { id: 1 };
 
   const toggleModal = () => {
     setModalOpen(!modalOpen);

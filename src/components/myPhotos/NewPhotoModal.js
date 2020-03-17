@@ -7,8 +7,8 @@ const NewPhotoModal = props => {
   const [newPhoto, setNewPhoto] = useState({title:"", description:"",date:"", userId:"", likes:""});
   const [image, setImage] = useState({url: ""})
   const [isLoading, setIsLoading] = useState(false);
-  // const user= JSON.parse(sessionStorage.getItem('credentials'))
-  const user={id:1}
+  const user= JSON.parse(sessionStorage.getItem('credentials'))
+  // const user={id:1}
 
   const handleFieldChange = e => {
     const stateToChange = {...newPhoto};

@@ -32,6 +32,9 @@ export default {
     },
     getOneFriendByActiveUserIdAndUserId(activeUserId, userId) {
         return fetch(`${remoteUrl}/friends?activeUserId=${userId}&userId=${activeUserId}`).then(r=>r.json())
+    },
+    getPendingRequestWithUserIdAndFriendId(activeUserId, userId){
+        return fetch(`${remoteUrl}/friends?activeUserId=${activeUserId}&userId=${userId}`).then(r=>r.json())
     }
     
 }

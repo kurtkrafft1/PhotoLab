@@ -1,0 +1,98 @@
+.login-form{
+    margin-top:80px;
+    height:700px;
+    display:flex;
+    align-items: center;
+    /* background: url("https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539_960_720.jpg") no-repeat center center fixed;  */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  fieldset {
+    display: flex;
+    max-width: 40em;
+    padding: 20px;
+    margin: 2em auto;
+    border: 0 none;
+    border-radius: 5px;
+    color: black;
+  
+  }
+  
+  fieldset input, fieldset button, fieldset select{
+    box-sizing: border-box;
+    padding: .2em .4em;
+    margin: .2em 0;
+    outline: none;
+    box-shadow: none;
+  }
+  .light-text{
+    color: grey;
+  }
+  fieldset button {
+    max-width: 9em;
+    padding: .5em;
+    margin: .3em auto;
+    background-color: cornflowerblue;
+    border: none;
+    color: cornsilk;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 2px;
+    width: 100%;
+    cursor: pointer;
+    align-self: center;
+  }
+  
+  fieldset label {
+    box-sizing: border-box;
+    user-select: none;
+    cursor: pointer;
+    text-align: right;
+  }
+  fieldset input:focus + label {
+    color: #933;
+  }
+  
+  fieldset .formgrid {
+    display: grid;
+    grid-template-columns: 1fr 1em 2fr;
+    grid-gap: .3em .6em;
+    grid-auto-flow: dense;
+    align-items: center;
+  }
+  
+  fieldset input, fieldset button, fieldset select {
+    grid-column: 2 /4;
+    width: auto;
+    margin: 0
+  }
+  
+  fieldset .alignRight {
+    text-align: right;
+  }
+  .button-container{
+    width: 100%;
+    color: black;
+      display: flex;
+      justify-content: center;
+  
+  }
+  #icons:hover{
+      opacity: 0.8;
+      cursor: pointer;
+  }
+  .sign-in-form{
+    border: solid black 2px;
+  }
+  .create-pic{
+    max-width: 100px;
+  }
+  .center-pic{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }

@@ -7,16 +7,14 @@ import "./MyPhotoDetails.css";
 
 const MyPhotoDetails = props => {
     const [photo, setPhoto] = useState({title: "", description: "", url:"", id:"", date:""})
-    const [isLoading, setIsLoading] = useState(false)
     const [ modalOpen, handleModal ] = useState(false);
     const [comments, setComments] = useState([])
     const [refreshComments, setRefreshComments] = useState(false)
     const [newMessage, setNewMessage] = useState({})
+    const user= JSON.parse(sessionStorage.getItem('credentials'))
     const toggleModal = () => {
         handleModal(!modalOpen)
     };
-    // const user= JSON.parse(sessionStorage.getItem('credentials'))
-    const user={id:1}
     
     const HandleDelete = () => {
         confirmAlert({
@@ -49,7 +47,6 @@ const MyPhotoDetails = props => {
           photoId: props.photoId,
           userId: user.id
         }
-        console.log(newComment)
         PhotographyManager.postNewComment(newComment).then(()=> {
           setRefreshComments(!refreshComments)
 
@@ -60,7 +57,6 @@ const MyPhotoDetails = props => {
     useEffect(()=> {
        
         PhotographyManager.getOne(props.photoId).then(photo=> {
-            // console.log(photo)
            setPhoto({
                description: photo.description,
                title: photo.title,
@@ -93,10 +89,7 @@ const MyPhotoDetails = props => {
             <div className="newRoot">
                 <div className="detail button-container">
                 <i id="icons"className=" big arrow alternate circle left icon" onClick={()=> props.history.push("/myphotos")}></i>
-                {/* <i id="icons"className="big edit outline icon" onClick={()=> props.history.push(`/myphotos/${props.photoId}/edit`)}></i> */}
                 <MyPhotoEditModal toggleModal={toggleModal} photoId={props.photoId} {...props}  modalOpen={modalOpen}/>
-         
-                
                 </div>
             <div className="view-card">
                 <div className="view-card-content">
