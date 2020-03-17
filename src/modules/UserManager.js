@@ -6,5 +6,8 @@ export default {
     },
     findUserByUsername(username) {
         return fetch(`${remoteUrl}users?username=${username}`).then(r=>r.json())
+    },
+    checkProfile(credentials) {
+        return fetch(`${remoteUrl}users?email=${credentials.email}`).then(r=>r.json())
     }
 }

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Modal, Form, Input, TextArea } from "semantic-ui-react";
 
 const ExploreOnePhotoModal = props => {
-    console.log(props.photo)
 
 
 
@@ -15,7 +14,7 @@ const ExploreOnePhotoModal = props => {
             </picture>
         }>
                      <Modal.Content>
-            <i class="window close outline icon" onClick={props.togglePhotoModal}></i>
+            <i className="window close outline icon" onClick={props.togglePhotoModal}></i>
             <Modal.Header>{props.photo.title}</Modal.Header>
             <div className="modal-photo-close-up">
                 <picture>

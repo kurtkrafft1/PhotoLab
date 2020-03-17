@@ -62,5 +62,8 @@ export default {
             body: JSON.stringify(obj)
         }).then(r=>r.json())
     },
+    getRandomPhotos(){
+        return fetch(`${remoteUrl}myphotos`).then(r=>r.json())
+    }
    
 }

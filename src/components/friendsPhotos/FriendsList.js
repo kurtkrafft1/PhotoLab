@@ -7,8 +7,8 @@ import FriendAddCard from "./FriendAddCard";
 
 const FriendsList = props => {
   const [friends, setFriends] = useState([]);
-  // const user = JSON.parse(sessionStorage.getItem('credentials'))
-  const user = { id: 1 };
+  const user = JSON.parse(sessionStorage.getItem('credentials'))
+  // const user = { id: 1 };
   const [friendSearch, setFriendSearch] = useState({username: "none entered"})
   const [friendResults, setFriendResults] = useState([])
   const [flag, setFlag] = useState(false)

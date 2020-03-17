@@ -1,29 +1,42 @@
 import React, { useState, useEffect } from "react";
 import PhotographyManager from "../../modules/PhotographyManager";
-
+import "./Explore.css"
+import ExplorePhotoCard from "./ExplorePhotoCard"
 
 const ExploreList = props => {
   const [randomPhotos, setRandomPhotos] = useState([]);
-  const [photoModalOpen, setPhotoModalOpen] = useState(false);
 
-  const togglePhotoModal = () => {
-    setPhotoModalOpen(!photoModalOpen);
-  };
+  useEffect( ()=> {
+    const arr = []
+   PhotographyManager.getAll().then(allPhotos=> {
+let counter = 0;
 
-  useEffect(()=> {
-   PhotographyManager.getAll(allPhotos=> 
-    //    console.log(allPhotos)
-    setRandomPhotos(allPhotos)
+while(counter<9){
+ const random = Math.floor(Math.random()*allPhotos.length)
+ arr.push(allPhotos[random])
+ allPhotos.splice(random, 1)
+ counter++
 
-    
-     
-   )
+
+
+}
+   }).then(()=> {
+     setRandomPhotos(arr)
+   })
+   
+   
   }, [])
-  
+
   return (
       <>
-      <div>
-          <h1>hello</h1>
+      <div className="explore-container">
+         <h1>Explore</h1>
+         <div className="explore-photos-card-container">
+           {randomPhotos.map(photo=> {
+            return  <ExplorePhotoCard key={photo.id} photo={photo} {...props}/>
+           })}
+         </div>
+
       </div>
       </>
   )

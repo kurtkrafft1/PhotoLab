@@ -7,8 +7,8 @@ const FriendsPhotoDetails = props => {
   const [comments, setComments] = useState([]);
   const [newMessage, setNewMessage] = useState({});
   const [refreshComments, setRefreshComments] = useState(false);
-//   const user = JSON.parse(sessionStorage.getItem('credentials'))
-  const user = {id:1}
+  const user = JSON.parse(sessionStorage.getItem('credentials'))
+  // const user = {id:1}
 
   const handleMessageChange = e => {
     const stateToChange = { ...newMessage };
@@ -25,7 +25,6 @@ const FriendsPhotoDetails = props => {
         photoId: props.photoId,
         userId: user.id
       };
-      console.log(newComment);
       PhotographyManager.postNewComment(newComment).then(() => {
         setRefreshComments(!refreshComments);
       });

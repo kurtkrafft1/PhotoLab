@@ -10,12 +10,9 @@ const FriendsPhotoList = props => {
 
     useEffect(()=> {
         PhotographyManager.getAllWithId(props.friendId).then(photosFromApi=> {
-            console.log('friends photos', photosFromApi)
             setFriendsPhotos(photosFromApi)
         }).then(()=> {
-            console.log(props.friendId)
             UserManager.getUserInfo(props.friendId).then(friendFromAPi=> {
-                console.log(friendFromAPi)
                 setFriend(friendFromAPi[0])
             })
         })
