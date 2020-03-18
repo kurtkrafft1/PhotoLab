@@ -62,11 +62,6 @@ const FriendsPhotoDetails = props => {
       <>
         <div className="newRoot">
           <div className="detail button-container">
-            <i
-              id="icons"
-              className=" big arrow alternate circle left icon"
-              onClick={() => props.history.push("/friends")}    
-            ></i>
           </div>
           <div className="view-card">
             <div className="view-card-content">

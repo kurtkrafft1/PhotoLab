@@ -9,7 +9,7 @@ const MyPhotoList = props => {
   const [isLoading, setIsLoading] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [refreshPhotos, setRefreshPhotos] = useState(false);
-  const user = JSON.parse(sessionStorage.getItem('credentials'))
+  const user = JSON.parse(sessionStorage.getItem("credentials"));
   // const user = { id: 1 };
 
   const toggleModal = () => {
@@ -34,35 +34,37 @@ const MyPhotoList = props => {
       <div className="container-header">
         <h1>My Photos...</h1>
       </div>
-  
-        <div className="icon-container">
-          {" "}
-          <div className="button-container">
-            <i
-              id="icons"
-              className=" big arrow alternate circle left icon"
-              onClick={() => props.history.push("/")}
-            ></i>
-            {/* <i id="icons"className=" big plus square outline icon" onClick={()=> props.history.push("myphotos/new")}></i> */}
-            <NewPhotoModal
-              toggleModal={toggleModal}
-              modalOpen={modalOpen}
-              {...props}
-              refreshPhotos={refreshPhotos}
-              setPhotos={setPhotos}
-            />
-  
+
+      <div className="icon-container">
+        {" "}
+        <div className="button-container">
+          {/* <i id="icons"className=" big plus square outline icon" onClick={()=> props.history.push("myphotos/new")}></i> */}
+          <NewPhotoModal
+            toggleModal={toggleModal}
+            modalOpen={modalOpen}
+            {...props}
+            refreshPhotos={refreshPhotos}
+            setPhotos={setPhotos}
+          />
+          <div className="left-or-right-buttons">
+            <div className="ui left attached button" role="button" tabindex="0" style={{opacity:0.8}}>
+              My Photos
+            </div>
+            <div className="ui right attached button" role="button" tabindex="0" onClick={()=> {props.history.push('/starred')}}>
+              Starred Photos
+            </div>
+          </div>
         </div>
         <div className="card-container">
-        {photos.map(photo => (
-          <MyPhotoCard
-            key={photo.id}
-            photo={photo}
-            setRefreshPhotos={setRefreshPhotos}
-            {...props}
-          />
-        ))}
-      </div>
+          {photos.map(photo => (
+            <MyPhotoCard
+              key={photo.id}
+              photo={photo}
+              setRefreshPhotos={setRefreshPhotos}
+              {...props}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

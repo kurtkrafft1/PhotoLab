@@ -6,8 +6,8 @@ const MyPhotoCard = props => {
     const HandleDelete = id => {
         // props.setModalOpen(true)
         confirmAlert({
-            title: 'Confirm to submit',
-            message: 'Are you sure to do this.',
+            title: 'Hold up....',
+            message: 'Are you sure to delete this photo?',
             buttons: [
               {
                 label: 'Yes',

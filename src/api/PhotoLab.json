@@ -1,5 +1,5 @@
 {
-  "myPhotos": [
+  "photos": [
     {
       "id": 1,
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTuMsC2CMPMOOeV05BXThBdEAUfQ4eY4l8rAp36aUTQm3zEQZzq",
@@ -94,15 +94,6 @@
     },
     {
       "userId": 2,
-      "title": "TITLE 4",
-      "description": "description maybe",
-      "url": "https://www.eadt.co.uk/polopoly_fs/1.3607937.1400582761!/image/image.jpg_gen/derivatives/landscape_630/image.jpg",
-      "date": 1584129968310,
-      "likes": 1,
-      "id": 14
-    },
-    {
-      "userId": 2,
       "title": "Never Gonna Give",
       "description": "Never gonna give you up",
       "url": "https://news.images.itv.com/image/file/1990863/stream_img.jpg",
@@ -174,6 +165,14 @@
       "aboutMe": "Just a hip kid living in a hip world",
       "profPic": "https://media.istockphoto.com/photos/letter-x-3d-red-isolated-on-white-with-shadow-orthogonal-projection-picture-id688121582?k=6&m=688121582&s=612x612&w=0&h=FoEMjfEgIM3VPaR_WTauid2Ek38bkOFYmdRm6OouSCA=",
       "id": 5
+    },
+    {
+      "username": "Jean-Pierre",
+      "email": "jp@jp.com",
+      "password": "jp",
+      "aboutMe": "",
+      "profPic": "https://res.cloudinary.com/dgfnzsyga/image/upload/v1584469164/photoLab/fznisknkvpq1crtlhajz.png",
+      "id": 6
     }
   ],
   "friends": [
@@ -296,11 +295,6 @@
   ],
   "starredPhotos": [
     {
-      "id": 1,
-      "photoId": 1,
-      "userId": 1
-    },
-    {
       "id": 2,
       "photoId": 2,
       "userId": 2
@@ -309,6 +303,11 @@
       "id": 3,
       "photoId": 3,
       "userId": 3
+    },
+    {
+      "photoId": 10,
+      "userId": 1,
+      "id": 4
     }
   ],
   "comments": [
@@ -365,12 +364,6 @@
       "userId": 3,
       "photoId": 5,
       "message": "Wow, this is some bologna"
-    },
-    {
-      "id": 10,
-      "userId": 3,
-      "photoId": 6,
-      "message": "futspah!"
     },
     {
       "message": "a",

@@ -77,7 +77,10 @@ const handleAdd = ( friendId) => {
       <h1 className="page-title">Friends...</h1>
       <div className="icon-container"></div>
       <div className="friend-container">
-        {friends.map(friend => {
+        {friends.length===0? (
+          <div className="sorry"><h1>No friends yet....</h1></div>
+        ) :(
+        friends.map(friend => {
           return (
             <FriendCard
               friend={friend}
@@ -86,7 +89,7 @@ const handleAdd = ( friendId) => {
               handleDelete={handleDelete}
             />
           );
-        })}
+        }))}
       </div>
       </div>
       <div className="center-page no-top"> 
