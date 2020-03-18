@@ -3,8 +3,8 @@ import UserManager from "../../modules/UserManager";
 import keys from "../../keys/ApiKies";
 
 const CreateCardForm = (props) => {
-    const [user, setUser] = useState({username:"", email: "", password: "",confirmedPassword:"", profPic:"", id:"" })
-    const [credentials, setCredentials] = useState({username:"", email: "", password: "", profPic:"", id:"" });
+    const [user, setUser] = useState({username:"", email: "", confirmUsername: "", profPic:"", id:"" })
+    const [credentials, setCredentials] = useState({username:"", email: "", profPic:"", id:"" });
     const [image, setImage] = useState({profPic: ""})
     const [isLoading, setIsLoading] = useState(false)
 
@@ -17,14 +17,13 @@ const CreateCardForm = (props) => {
         evt.preventDefault()
         if(user.username===""|| user.password===""||user.email===""){
             window.alert("Please fill out all the required fields")
-        }else if (user.password !== user.confirmedPassword){
-            window.alert("The Passwords entered do not match")
+        }else if (user.username !== user.confirmUsername){
+            window.alert("The usernames entered do not match")
         }else {
             if(image.profPic===""){
                 const newUser = {
                     username: user.username,
                     email: user.email,
-                    password: user.password,
                     aboutMe: "",
                     profPic: "https://vectorified.com/images/no-profile-picture-icon-14.png"
                 }
@@ -38,7 +37,6 @@ const CreateCardForm = (props) => {
                 const newUser = {
                     username: user.username,
                     email: user.email,
-                    password: user.password,
                     aboutMe: "",
                     profPic: image.profPic
                 }
@@ -86,19 +84,12 @@ const CreateCardForm = (props) => {
             placeholder="Email address"
             required="" autoFocus="" />
           <label htmlFor="inputEmail">Email address</label>
-
-          <input onChange={handleFieldChange} type="password"
-            id="password"
-            placeholder="Password"
-            required=""
-            type="password" />
-          <label htmlFor="inputPassword">Password</label>
-          <input onChange={handleFieldChange} type="confirmPassword"
-            id="confirmedPassword"
-            placeholder="Confirm Password"
+          <input onChange={handleFieldChange} type="confirmUsername"
+            id="confirmUsername"
+            placeholder="Confirm Username"
             required="" 
-            type="password"/>
-          <label htmlFor="inputconfirmPassword">Confirm Password</label>
+            type="text"/>
+          <label htmlFor="inputconfirmUsername">Confirm Username</label>
           <input
           name="file"
           id="profPic"
