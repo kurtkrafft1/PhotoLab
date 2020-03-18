@@ -321,6 +321,16 @@
       "photoId": 10,
       "userId": 1,
       "id": 4
+    },
+    {
+      "photoId": 17,
+      "userId": 7,
+      "id": 5
+    },
+    {
+      "photoId": 10,
+      "userId": 7,
+      "id": 6
     }
   ],
   "comments": [

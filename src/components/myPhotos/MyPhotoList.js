@@ -32,7 +32,6 @@ const MyPhotoList = props => {
   return (
     <>
       <div className="container-header">
-        <h1>My Photos...</h1>
       </div>
 
       <div className="icon-container">

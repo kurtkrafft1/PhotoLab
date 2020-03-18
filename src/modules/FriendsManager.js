@@ -35,6 +35,18 @@ export default {
     },
     getPendingRequestWithUserIdAndFriendId(activeUserId, userId){
         return fetch(`${remoteUrl}/friends?activeUserId=${activeUserId}&userId=${userId}`).then(r=>r.json())
+    },
+    getAllRequests(activeUserId){
+        return fetch(`${remoteUrl}/friends?userId=${activeUserId}&statusId=2`).then(r=>r.json())
+    },
+    updateExistingFriendRequestToAccepted(id){
+        return fetch(`${remoteUrl}/friends/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify({statusId: 1})
+        }).then(r=>r.json())
     }
     
 }
