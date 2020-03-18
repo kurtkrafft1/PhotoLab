@@ -7,7 +7,7 @@ const HomeList = (props) => {
     return (
       <div className="home-container">
           <HomeCard {...props}/>
-          <div className="button-container">
+          <div className="button-container-home">
           <button type="button" className="ui inverted primary button" onClick={()=> props.history.push('/explore')}>Explore</button>
           </div>
       </div>
@@ -16,7 +16,7 @@ const HomeList = (props) => {
   return (
     <div className="home-container">
         <HomeCard />
-        <div className="button-container">
+        <div className="button-container-home">
           <button type="button" className="ui inverted primary button" onClick={()=> props.history.push('/login')}>Sign in</button>
           <button type="button" className="ui inverted primary button" onClick={()=> props.history.push('/create')}>Create an Account</button>
 

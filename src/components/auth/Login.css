@@ -78,7 +78,17 @@
     width: 100%;
     color: black;
       display: flex;
-      justify-content: center;
+      align-items: flex-end;    
+      padding-right: 2.5%;
+      flex-direction: column;
+  
+  }
+  .button-container-home{
+    width: 100%;
+    color: black;
+      display: flex;
+      justify-content: center;  
+      padding-right: 2.5%;
   
   }
   #icons:hover{
@@ -96,3 +106,4 @@
     display: flex;
     justify-content: center;
   }
+  

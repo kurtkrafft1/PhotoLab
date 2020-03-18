@@ -1,3 +1,42 @@
 .explore-container{
     margin-top: 200px;
 }
+.explore-photos-card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+.friends-photo-thumbnail{
+    min-width: 300px;
+    max-width: 300px;
+
+}
+.explore-photo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5%;
+}
+.max-height-div{
+    max-height: 200px;
+    overflow: hidden;
+}
+#modal-friends-photo{
+    min-width: 500px;
+    max-width: 500px;
+}
+#View-photo-modal{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+#view-modal-header{
+    align-self: center;
+}
+.photo-title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

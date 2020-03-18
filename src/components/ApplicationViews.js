@@ -8,6 +8,8 @@ import FriendsPhotoDetails from "./friendsPhotos/FriendsPhotoDetails"
 import HomeList from "../home/HomeList";
 import ExploreList from "./explore/ExploreList";
 import Login from "./auth/Login"
+import CreateCardForm from "./createform/CreateCardForm";
+import StarredPhotos from './myPhotos/StarredPhotos';
 
 
 const ApplicationViews = props => {
@@ -20,6 +22,12 @@ const ApplicationViews = props => {
         exact path ="/login"
         render={props=> {
             return <Login {...props} setUser={setUser}/>
+        }}
+        />
+        <Route 
+        exact path = "/create"
+        render={props => {
+            return <CreateCardForm {...props} hasUser={hasUser} setUser={setUser} />
         }}
         />
         <Route
@@ -94,6 +102,16 @@ const ApplicationViews = props => {
                 return <Redirect to="/login" />
             }
          
+        }}
+        />
+        <Route 
+        path="/starred"
+        render={props=> {
+            if(hasUser){
+                return <StarredPhotos {...props} />
+            }else {
+                return <Redirect to="/login" />
+            }
         }}
         />
         

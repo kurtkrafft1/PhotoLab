@@ -1,84 +1,107 @@
 * {
-    margin: 0;
-    font-family: "Lora", sans-serif;
-    /* background-color: #c97b84; */
-  }
-  
-  #root{
-     background-color: white;
-  }
-  header {
-    background-color: white;
-    padding: 1%;
-    padding-top: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* position: sticky; */
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    /* box-shadow:  0 8px 6px -6px black;  */
-  }
-  header h1 {
-    margin-top: 3%;
-    color: black;
-    font-size: 50px;
-    font-family: "Arial", sans-serif;
-    
-  }
-  header h1:hover {
-  
-    color: black;
-    opacity: 0.8;
-    font-size: 50px;
-    font-family: "Arial", sans-serif;
-  }
-  .navItem{
-    color: black;
-  }
-  .navItem:hover {
-    color: black !important;
-    opacity: 0.8;
+  margin: 0;
+  font-family: "Lora", sans-serif;
+  /* background-color: #c97b84; */
+}
+
+#root {
+  background-color: white;
+}
+header {
+  background-color: white;
+  padding: 1%;
+  padding-top: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  /* box-shadow:  0 8px 6px -6px black;  */
+}
+.title-home {
+  margin-top: 3%;
+  color: black;
+  font-size: 50px;
+  font-family: "Arial", sans-serif;
+}
+header h1:hover {
+  color: black;
+  opacity: 0.8;
+  font-size: 50px;
+  font-family: "Arial", sans-serif;
+}
+.navItem {
+  color: black;
+}
+.navItem-active {
+  color: rgba(0, 0, 0, 0.377);
+}
+.navItem:hover {
+  color: rgba(0, 0, 0, 0.336) !important;
+
+}
+.navLinks {
+  margin-top: 3%;
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.header-word{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.div-test{
+  display: flex;
+  width: 61%;
+  justify-content: space-between; 
+}
+.userInfo {
+  align-self: flex-start;
+ 
+  display: flex;
+}
+.userInfo p {
+  align-self: flex-end;
+}
+.profPicIcon {
+  max-width: 40px;
+  margin-left: 20%;
+  border-radius: 100px;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .userInfo {
+    visibility: hidden;
   }
   .navLinks {
-    margin-top: 3%;
-    display: flex;
-    justify-content: space-evenly;
+    visibility: hidden;
   }
-  @media only screen and (max-width: 800px) {
-    .userInfo{
-      visibility: hidden;
-    }
-    .navLinks{
-      visibility: hidden;
-    }
-  header{
-      background-color: #292929 !important;
-      width: 100%;
-      height: 90px;
-      transition: ease-in 1s;
-      position: fixed;
-      background: none;
-      display: flex;
-      -webkit-box-shadow: 0 8px 6px -6px black;
-	   -moz-box-shadow: 0 8px 6px -6px black;
-	        box-shadow: 0 8px 6px -6px black;
-  
+  header {
+    background-color: #292929 !important;
+    width: 100%;
+    height: 60px;
+    align-content: space-between;
+    transition: ease-in 1s;
+    padding-bottom: 0px;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
   }
-  header h1 {
-      width: 100%;
-  margin-top: 20px !important;  
-  font-size: 40px;
-  margin-left: 12%;
+  .div-test{
+    align-self: baseline ;
+    border: 2px dotted red;
+    margin-bottom: 30px;
+  }
+  .title-home {
+    align-self: flex-end;
     color: white;
+    font-size: 40px;
   }
-  html{
+  html {
     background-color: white;
   }
-    .title {
-      font-size: 30px;
-      margin-left: 30px;
-    }
   
-  }
+}

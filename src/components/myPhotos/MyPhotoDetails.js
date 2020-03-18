@@ -88,8 +88,7 @@ const MyPhotoDetails = props => {
             <>
             <div className="newRoot">
                 <div className="detail button-container">
-                <i id="icons"className=" big arrow alternate circle left icon" onClick={()=> props.history.push("/myphotos")}></i>
-                <MyPhotoEditModal toggleModal={toggleModal} photoId={props.photoId} {...props}  modalOpen={modalOpen}/>
+                
                 </div>
             <div className="view-card">
                 <div className="view-card-content">
@@ -103,6 +102,7 @@ const MyPhotoDetails = props => {
         </div>
         <div className="icons">
                 <i className="trash alternate outline icon" onClick={HandleDelete}></i>
+                <MyPhotoEditModal toggleModal={toggleModal} photoId={props.photoId} {...props}  modalOpen={modalOpen}/>
                 </div>
             </div>
                 </div>

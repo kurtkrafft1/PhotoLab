@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import UserManager from "../../modules/UserManager";
 const Login = props => {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [credentials, setCredentials] = useState({ email: "", username: "" });
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
@@ -17,7 +17,7 @@ const Login = props => {
     UserManager.checkProfile(credentials).then(userInfo=> {
     if(userInfo.length===0){
       window.alert("I am sorry, there wasn't an account that matched that email")
-    } else if(credentials.password===userInfo[0].password){
+    } else if(credentials.username===userInfo[0].username){
       props.setUser(userInfo[0])
       props.history.push("/");
     } else{
@@ -39,10 +39,10 @@ const Login = props => {
           <label htmlFor="inputEmail">Email address</label>
 
           <input onChange={handleFieldChange} type="password"
-            id="password"
-            placeholder="Password"
+            id="username"
+            placeholder="Username"
             required="" />
-          <label htmlFor="inputPassword">Password</label>
+          <label htmlFor="inputPassword">Username</label>
         </div>
         <div className="button-container">
         <button type="submit" className="ui inverted primary button" onClick={validateLogin}>Sign in</button>

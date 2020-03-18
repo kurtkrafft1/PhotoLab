@@ -70,7 +70,7 @@ const MyPhotoEditModal = props => {
         setIsLoading(false);
       };
     return (
-        <Modal id="signup-modal" open={props.modalOpen} trigger={<i id="icons"className="big edit outline icon" onClick={props.toggleModal}></i>}>
+        <Modal id="signup-modal" open={props.modalOpen} trigger={<i id="icons"className=" edit outline icon" onClick={props.toggleModal}></i>}>
             <Modal.Header>Edit Photo</Modal.Header>
              <Modal.Content>
                 <Form>
