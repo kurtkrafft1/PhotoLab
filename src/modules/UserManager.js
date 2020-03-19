@@ -15,9 +15,18 @@ export default {
             method: "POST",
             headers: {
                 "content-type": "application/json"
-            },
+            },  
             body: JSON.stringify(profile)
 
+        }).then(r=>r.json())
+    },
+    putEditedProfile(obj) {
+        return fetch(`${remoteUrl}users/${obj.id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(obj)
         }).then(r=>r.json())
     }
     

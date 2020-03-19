@@ -2,17 +2,25 @@ import React, { useState, useEffect } from 'react'
 import FriendsManager from "../../modules/FriendsManager"
 import FriendRequestCard from "./FriendRequestCard";
 import "./MyProfile.css";
+import EditProfileModal from "./EditProfileModal";
+import UserManager from '../../modules/UserManager';
 
 const MyProfile = props => {
-    const user = JSON.parse(sessionStorage.getItem('credentials'))
+    const activeUser = JSON.parse(sessionStorage.getItem('credentials'))
     const [requests, setRequests] = useState([])
+    const [user, setUser] = useState({})
     const [refresh, setRefresh] = useState(false)
+    const [profileModalOpen, setProfileModalOpen] = useState(false)
 
+
+    const toggleModal = () => {
+        setProfileModalOpen(!profileModalOpen)
+    }
     const AcceptRequest = (requestId) => {
         console.log('accepting')
         FriendsManager.updateExistingFriendRequestToAccepted(requestId).then(obj=> {
             const newFriend = {
-                activeUserId: user.id,
+                activeUserId: activeUser.id,
                 userId: obj.activeUserId,
                 statusId: 1
             }
@@ -24,15 +32,17 @@ const MyProfile = props => {
 
 
     useEffect(()=> {
-        FriendsManager.getAllRequests(user.id).then(setRequests)
-        console.log(requests)
+        FriendsManager.getAllRequests(activeUser.id).then(setRequests).then(()=> {
+            UserManager.getUserInfo(activeUser.id).then(userFromApi=> setUser(userFromApi[0]))
+        })
+        
     }, [refresh])
 
 
     return (
         <>
           <div className="profile-edit-icon">
-            <i className="big edit outline icon" id="icons"></i>
+          <EditProfileModal toggleModal={toggleModal} profileModalOpen={profileModalOpen} userId={user.id} refresh={refresh} setRefresh={setRefresh}/>
             </div>
         <div className="profile-container">
           
