@@ -47,11 +47,10 @@ const Navbar = props => {
              <div className="userInfo">
             
             </div>
-            <div className="div-test">
-            <NavLink to="/">
-            <h1>PH<i className="camera retro icon"></i>TOLAB</h1>
-            </NavLink>
-            
+            <div className="header-word">
+               <div className="div-test">
+               <NavLink to="/" ><h1 className="title-home">PH<i className="camera retro icon"></i>TOLAB</h1>  </NavLink>
+            </div>
             </div>
            
         </header>

@@ -10,7 +10,7 @@ const MyPhotoDetails = props => {
     const [ modalOpen, handleModal ] = useState(false);
     const [comments, setComments] = useState([])
     const [refreshComments, setRefreshComments] = useState(false)
-    const [newMessage, setNewMessage] = useState({})
+    const [newMessage, setNewMessage] = useState({message: ""})
     const user= JSON.parse(sessionStorage.getItem('credentials'))
     const toggleModal = () => {
         handleModal(!modalOpen)

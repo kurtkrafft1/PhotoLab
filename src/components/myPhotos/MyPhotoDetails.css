@@ -61,7 +61,7 @@
     align-self: flex-end;
 }
 .user-comment{
-    align-self: flex-end;
+
      display: flex;
     flex-direction: column;
     margin-bottom: 10px;
@@ -70,6 +70,8 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+    width: 100%;
+    align-items: flex-end;
 }
 ::-webkit-scrollbar {
     width: 10px;

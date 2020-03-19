@@ -35,7 +35,6 @@
 }
 .friendPhoto{
     margin: 2%;
-    border: 1px dotted red;
     display: flex;
     flex-direction: column;
     align-items: center;    

@@ -5,7 +5,7 @@ const FriendsPhotoCard = props => {
   
     return (
         <>
-        <div className="friendPhoto">
+        <div className="friendPhoto card">
         <picture>
                 <img src={props.photo.url} alt={props.photo.title} id="friends-photo-thumbnail" onClick={()=> {
                     props.history.push(`/friends/photos/details/${props.photo.id}`)

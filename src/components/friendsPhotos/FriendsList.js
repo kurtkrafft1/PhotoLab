@@ -74,9 +74,8 @@ const handleAdd = ( friendId) => {
   return (
     <>
     <div className="center-page">
-      <h1 className="page-title">Friends...</h1>
-      <div className="icon-container"></div>
       <div className="friend-container">
+      <h1>Friends...</h1>
         {friends.length===0? (
           <div className="sorry"><h1>No friends yet....</h1></div>
         ) :(
@@ -91,16 +90,16 @@ const handleAdd = ( friendId) => {
           );
         }))}
       </div>
-      </div>
-      <div className="center-page no-top"> 
-          <h1>Search Usernames....</h1>
-          <div className="friend-search">
+      <div className="friend-search-container"> 
+      <div className="friend-search">
+          <h1>Search for Friends....</h1>
+         
               <input type="text" id="username" placeholder="Search here..." onChange={handleFieldChange} onKeyPress={enterKeyPress}/>
           </div>
           { friendSearch.username==="none entered" ? (
                <div></div>
           ) : (
-            <div className="friend-container">
+            <div className="card-div">
                 {
                     friendResults.map(friend=> {
                         return (
@@ -113,6 +112,8 @@ const handleAdd = ( friendId) => {
           }
             
       </div>
+      </div>
+   
     </>
   );
 };

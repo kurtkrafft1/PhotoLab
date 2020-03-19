@@ -46,10 +46,10 @@ const MyPhotoList = props => {
             setPhotos={setPhotos}
           />
           <div className="left-or-right-buttons">
-            <div className="ui left attached button" role="button" tabindex="0" style={{opacity:0.8}}>
+            <div className="ui left attached button" role="button" tabIndex="0" style={{opacity:0.8}}>
               My Photos
             </div>
-            <div className="ui right attached button" role="button" tabindex="0" onClick={()=> {props.history.push('/starred')}}>
+            <div className="ui right attached button" role="button" tabIndex="0" onClick={()=> {props.history.push('/starred')}}>
               Starred Photos
             </div>
           </div>
