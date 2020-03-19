@@ -33,7 +33,7 @@
 }
 .comment-card-container{
     height: 400px;
-    width: 300px;
+    width: 500px;
     overflow: scroll;
    
 }
@@ -61,6 +61,7 @@
     align-self: flex-end;
 }
 .user-comment{
+    align-self: flex-end;
      display: flex;
     flex-direction: column;
     margin-bottom: 10px;

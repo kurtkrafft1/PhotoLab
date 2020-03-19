@@ -10,6 +10,7 @@ import ExploreList from "./explore/ExploreList";
 import Login from "./auth/Login"
 import CreateCardForm from "./createform/CreateCardForm";
 import StarredPhotos from './myPhotos/StarredPhotos';
+import MyProfile from "./myProfile/MyProfile"
 
 
 const ApplicationViews = props => {
@@ -114,7 +115,16 @@ const ApplicationViews = props => {
             }
         }}
         />
-        
+        <Route
+        path="/myprofile"
+        render={props => {
+            if(hasUser){
+                return <MyProfile {...props} />
+            } else {
+                return <Redirect to ="/login" />
+            }
+        }}
+        />
         </>
 
     )

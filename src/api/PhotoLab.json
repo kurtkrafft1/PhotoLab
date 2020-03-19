@@ -155,7 +155,7 @@
       "email": "Sof@sof.com",
       "password": "sofia",
       "aboutMe": "Just a hip kid living in a hip world",
-      "profPic": "https://i.pinimg.com/originals/e8/39/d9/e839d986903a68a67df6dbbe6d9acda4.jpg",
+      "profPic": "https://vectorified.com/images/no-profile-picture-icon-14.png",
       "id": 4
     },
     {
@@ -198,18 +198,6 @@
     {
       "id": 10,
       "activeUserId": 2,
-      "userId": 1,
-      "statusId": 1
-    },
-    {
-      "id": 2,
-      "activeUserId": 1,
-      "userId": 3,
-      "statusId": 1
-    },
-    {
-      "id": 11,
-      "activeUserId": 3,
       "userId": 1,
       "statusId": 1
     },
@@ -290,6 +278,18 @@
       "activeUserId": 5,
       "userId": 2,
       "statusId": 1
+    },
+    {
+      "id": 19,
+      "activeUserId": 4,
+      "userId": 1,
+      "statusId": 2
+    },
+    {
+      "id": 20,
+      "activeUserId": 3,
+      "userId": 1,
+      "statusId": 2
     }
   ],
   "statuses": [
@@ -467,12 +467,6 @@
       "id": 23
     },
     {
-      "message": "check",
-      "photoId": 10,
-      "userId": 1,
-      "id": 24
-    },
-    {
       "message": "Check 12",
       "photoId": 10,
       "userId": 1,
@@ -519,6 +513,12 @@
       "photoId": 11,
       "userId": 1,
       "id": 32
+    },
+    {
+      "message": "test",
+      "photoId": 10,
+      "userId": 1,
+      "id": 33
     }
   ]
 }
