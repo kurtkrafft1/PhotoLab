@@ -1,5 +1,6 @@
 import React from "react";
-import withRouter, { NavLink} from "react-router-dom"
+// import withRouter, { NavLink} from "react-router-dom"
+import { Route , withRouter, NavLink} from 'react-router-dom';
 import './NavBar.css';
 
 const Navbar = props => {
@@ -21,7 +22,7 @@ const Navbar = props => {
            <div className="userInfo">
                 <p>{user.username}</p>
                 <picture>
-                    <img src={user.profPic} alt="you!" className="profPicIcon" />
+                    <img src={user.profPic} alt="you!" className="profPicIcon" onClick={()=> props.history.push('/myprofile')}/>
                 </picture>
             </div>
             </div>
@@ -46,7 +47,7 @@ const Navbar = props => {
              <div className="userInfo">
             
             </div>
-            <div className="bar">
+            <div className="div-test">
             <NavLink to="/">
             <h1>PH<i className="camera retro icon"></i>TOLAB</h1>
             </NavLink>
@@ -56,4 +57,4 @@ const Navbar = props => {
         </header>
     )}
 }
-export default Navbar;
+export default withRouter(Navbar);  

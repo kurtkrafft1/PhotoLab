@@ -30,7 +30,6 @@ while(counter<9){
   return (
       <>
       <div className="explore-container">
-         <h1>Explore</h1>
          <div className="explore-photos-card-container">
            {randomPhotos.map(photo=> {
             return  <ExplorePhotoCard key={photo.id} photo={photo} {...props}/>

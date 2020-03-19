@@ -70,6 +70,10 @@ header h1:hover {
   margin-left: 20%;
   border-radius: 100px;
 }
+.profPicIcon:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
 
 
 @media only screen and (max-width: 800px) {
