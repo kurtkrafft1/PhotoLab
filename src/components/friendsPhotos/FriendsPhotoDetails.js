@@ -5,7 +5,7 @@ import CommentCard from "../myPhotos/CommentCard";
 const FriendsPhotoDetails = props => {
   const [friendPhoto, setFriendPhoto] = useState({});
   const [comments, setComments] = useState([]);
-  const [newMessage, setNewMessage] = useState({});
+  const [newMessage, setNewMessage] = useState({message: ""});
   const [refreshComments, setRefreshComments] = useState(false);
   const user = JSON.parse(sessionStorage.getItem('credentials'))
   // const user = {id:1}
