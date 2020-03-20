@@ -82,6 +82,9 @@ header h1:hover {
   opacity: 0.8;
   cursor: pointer;
 }
+.exclamation{
+  color: rgb(243, 64, 64) !important;
+}
 
 
 @media only screen and (max-width: 800px) {

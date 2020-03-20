@@ -29,6 +29,11 @@ const MyProfile = props => {
             })
         })
     }
+    const denyRequest = (requestId) => {
+        FriendsManager.updateExistingFriendRequestToDenied(requestId).then(()=> {
+            setRefresh(!refresh)
+        })
+    }
 
 
     useEffect(()=> {
@@ -61,7 +66,7 @@ const MyProfile = props => {
                 <h1>Friend Requests</h1>
                 <div className="request-card-container">
                 {requests.map(request=> {
-                    return <FriendRequestCard request={request} key={request.id} {...props} AcceptRequest={AcceptRequest} />
+                    return <FriendRequestCard request={request} key={request.id} denyRequest={denyRequest} {...props} AcceptRequest={AcceptRequest} />
                 })}
             </div>
             </div>

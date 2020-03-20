@@ -34,12 +34,13 @@
 }
 .request-card{
     width: 30%;
-    border: 1px dotted red;
+    background-color: white;
+    padding: 1%;
     display: flex;
     justify-content: space-evenly;
 }
 #request-user-prof-pic{
-    max-width: 100px;
+    max-width: 80px;
 }
 .request-card picture {
     margin-right: 2%;

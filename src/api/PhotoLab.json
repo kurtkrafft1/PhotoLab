@@ -287,18 +287,6 @@
       "id": 22
     },
     {
-      "activeUserId": 1,
-      "userId": 3,
-      "statusId": 1,
-      "id": 23
-    },
-    {
-      "activeUserId": 3,
-      "userId": 1,
-      "statusId": 1,
-      "id": 24
-    },
-    {
       "activeUserId": 6,
       "userId": 1,
       "statusId": 1,
@@ -315,6 +303,12 @@
       "userId": 1,
       "statusId": 1,
       "id": 27
+    },
+    {
+      "activeUserId": 3,
+      "userId": 1,
+      "statusId": 2,
+      "id": 28
     }
   ],
   "statuses": [

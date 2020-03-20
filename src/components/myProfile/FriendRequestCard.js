@@ -11,7 +11,7 @@ const FriendRequestCard = props => {
    
     return (
         <>
-        <div className="request-card">
+        <div className="friend-card">
             <div className="request-photo-card">
                 <picture>
                     <img src={requestUser.profPic} alt='They added you' id="request-user-prof-pic" />
@@ -22,7 +22,7 @@ const FriendRequestCard = props => {
             </div>
             <div className="accept-user-or-deny-user">
             <i className="user plus icon" onClick={()=> props.AcceptRequest(requestId)} id="icons"></i>
-            <i className="user times icon add_space" id="icons"></i>
+            <i className="user times icon add_space" id="icons" onClick={()=> {props.denyRequest(requestId)}}></i>
             </div>
         </div>
         </>

@@ -98,7 +98,7 @@ const MyPhotoDetails = props => {
                     <div className="photo-info">
         <h2><em>{photo.title}</em></h2>
         <h6>{photo.description}</h6>
-        <p>{photo.date.toDate().toString()}</p>
+        <p>{photo.date}</p>
         </div>
         <div className="icons">
                 <i className="trash alternate outline icon" onClick={HandleDelete}></i>
