@@ -47,6 +47,15 @@ export default {
             },
             body: JSON.stringify({statusId: 1})
         }).then(r=>r.json())
+    },
+    updateExistingFriendRequestToDenied(id){
+        return fetch(`${remoteUrl}/friends/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify({statusId: 3})
+        }).then(r=>r.json())
     }
     
 }
