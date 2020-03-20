@@ -17,7 +17,6 @@ const HomeCard = props => {
     const backgroundStyle = {
         backgroundImage: `url(${array[ranNum]})`
     }
-    console.log(props)
 return <div className="home-screen" id="home-screen" style={backgroundStyle}>
 
 <h1>PhotoLab</h1>

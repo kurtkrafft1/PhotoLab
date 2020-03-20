@@ -24,6 +24,8 @@ header {
   color: black;
   font-size: 50px;
   font-family: "Arial", sans-serif;
+  align-self: center !important;
+  width: 100%;
 }
 header h1:hover {
   color: black;
@@ -50,16 +52,22 @@ header h1:hover {
 .header-word{
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 }
 .div-test{
   display: flex;
-  width: 61%;
+  width: 100%;
   justify-content: space-between; 
+  padding-left: 10%;
+}
+.div-test-2{
+  display: flex;
+  width: 100%;
+  justify-content: space-between; 
+ 
 }
 .userInfo {
   align-self: flex-start;
- 
   display: flex;
 }
 .userInfo p {

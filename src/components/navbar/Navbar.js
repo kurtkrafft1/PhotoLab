@@ -17,8 +17,10 @@ const Navbar = props => {
                   
            
            <div className="header-word">
+               
                <div className="div-test">
-               <NavLink to="/" ><h1 className="title-home">PH<i className="camera retro icon"></i>TOLAB</h1>  </NavLink>
+               <div></div>
+               <NavLink to="/" className="home-title"><h1 className="title-home">PH<i className="camera retro icon"></i>TOLAB</h1>  </NavLink>
            <div className="userInfo">
                 <p>{user.username}</p>
                 <picture>
@@ -48,8 +50,10 @@ const Navbar = props => {
             
             </div>
             <div className="header-word">
-               <div className="div-test">
+               <div className="div-test-2">
+                   <div></div>
                <NavLink to="/" ><h1 className="title-home">PH<i className="camera retro icon"></i>TOLAB</h1>  </NavLink>
+               <div></div>
             </div>
             </div>
            

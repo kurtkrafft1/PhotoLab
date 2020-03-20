@@ -26,7 +26,7 @@ const NewPhotoModal = props => {
           description: newPhoto.description,
           url: image.url,
           date: Date.now(),
-          likes: 1,
+          likes: 1
         }
         setImage({url:""})
         PhotographyManager.postNewphoto(photo).then(

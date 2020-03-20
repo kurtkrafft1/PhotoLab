@@ -164,7 +164,7 @@
     {
       "username": "Jean-Pierre",
       "email": "jp@jp.com",
-      "aboutMe": "",
+      "aboutMe": "Too cool for words",
       "profPic": "https://res.cloudinary.com/dgfnzsyga/image/upload/v1584469164/photoLab/fznisknkvpq1crtlhajz.png",
       "id": 6
     },
@@ -283,8 +283,38 @@
     {
       "activeUserId": 1,
       "userId": 6,
-      "statusId": 2,
+      "statusId": 1,
       "id": 22
+    },
+    {
+      "activeUserId": 1,
+      "userId": 3,
+      "statusId": 1,
+      "id": 23
+    },
+    {
+      "activeUserId": 3,
+      "userId": 1,
+      "statusId": 1,
+      "id": 24
+    },
+    {
+      "activeUserId": 6,
+      "userId": 1,
+      "statusId": 1,
+      "id": 25
+    },
+    {
+      "activeUserId": 1,
+      "userId": 7,
+      "statusId": 1,
+      "id": 26
+    },
+    {
+      "activeUserId": 7,
+      "userId": 1,
+      "statusId": 1,
+      "id": 27
     }
   ],
   "statuses": [
