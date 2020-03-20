@@ -1,17 +1,33 @@
-import React, { useState, useEffect } from "react" ;
+import React, { useState, useCallback } from "react" ;
 import UserManager from "../../modules/UserManager";
 import keys from "../../keys/ApiKies";
+import Cropper from 'react-easy-crop'
+import Slider from '@material-ui/core/Slider'
+import "./create.css"
 
 const CreateCardForm = (props) => {
     const [user, setUser] = useState({username:"", email: "", confirmUsername: "", profPic:"", id:"" })
     const [credentials, setCredentials] = useState({username:"", email: "", profPic:"", id:"" });
     const [image, setImage] = useState({profPic: ""})
     const [isLoading, setIsLoading] = useState(false)
+    const [uploadedImage, setUploadedImage] = useState({src: ""})
+    const [crop, setCrop] = useState({ x: 0, y: 0 })
+    const [zoom, setZoom] = useState(1)
+    const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
+      console.log(croppedArea, croppedAreaPixels)
+    }, [])
 
     const handleFieldChange = evt => {
         const stateToChange = {...user}
         stateToChange[evt.target.id] = evt.target.value
         setUser(stateToChange)
+    }
+    const handleFile = e => {
+        const fileReader = new FileReader()
+        fileReader.onloadend = () => {
+            setUploadedImage({src: fileReader.result })
+        }   
+        fileReader.readAsDataURL(e.target.files[0])
     }
     const postNewAccount = evt => {
         evt.preventDefault()
@@ -96,16 +112,45 @@ const CreateCardForm = (props) => {
           type="file"
           className="file-upload"
           data-cloudinary-field="image_id"
-          onChange={uploadImage}
+          onChange={handleFile}
           data-form-data="{ 'transformation': {'crop':'limit','tags':'samples','width':3000,'height':2000}}"
         />
           <label htmlFor="inputprofPic">Profile Pic</label>
+          {uploadedImage.src==="" ? ( <div className="crop-container"><img className="crop-image" src="https://seeba.se/wp-content/themes/consultix/images/no-image-found-360x260.png"alt="none-found" /></div>)
+          : (
+            <>
+            <div className="crop-container">
+        <Cropper
+          image={uploadedImage.src}
+          crop={crop}
+          zoom={zoom}
+          aspect={1 / 1}
+          onCropChange={setCrop}
+          onCropComplete={onCropComplete}
+          onZoomChange={setZoom}
+          className="crop-image"
+        />
+      </div>
+      <div className="controls">
+        <Slider
+          value={zoom}
+          min={1}
+          max={3}
+          step={0.1}
+          aria-labelledby="Zoom"
+          onChange={(e, zoom) => setZoom(zoom)}
+          classes={{ container: 'slider' }}
+        />
+      </div>
+            </>
+          )}
+          
          
         </div>
         <picture className="center-pic">
               <img src={user.profPic} className="create-pic" />
           </picture>
-          <div className="newPhoto">
+          {/* <div className="newPhoto">
       {isLoading ? (
         <h3> Loading...</h3>
       ) : (
@@ -114,7 +159,7 @@ const CreateCardForm = (props) => {
         ) :(
         <img src={image.profPic} style={{width: '300px'}}alt="upload-photos" />)
       )}
-    </div>
+    </div> */}
         <div className="button-container">
         <button type="submit" className="ui inverted primary button" onClick={postNewAccount}>Sign up!</button>
         </div>
