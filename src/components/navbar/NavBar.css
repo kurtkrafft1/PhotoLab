@@ -60,6 +60,12 @@ header h1:hover {
   justify-content: space-between; 
   padding-left: 10%;
 }
+.div-test-2{
+  display: flex;
+  width: 100%;
+  justify-content: space-between; 
+ 
+}
 .userInfo {
   align-self: flex-start;
   display: flex;

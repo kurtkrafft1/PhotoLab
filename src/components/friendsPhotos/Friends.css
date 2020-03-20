@@ -8,28 +8,34 @@
 .friend-container{
     display: flex;
     flex-direction: column;
-    width: 30%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    width: 40%;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-evenly; */
     align-items: center;
-    /* border: 1px solid rgba(131, 128, 128, 0.274); */
-    background-image: linear-gradient(to bottom , rgba(131, 128, 128, 0.274) , rgba(255, 255, 255, 0.932));
+    border: 1px solid rgba(151, 150, 150, 0.308);
+    border-radius: 10px;
     height: 500px;
     overflow: scroll;
 
-}
+}   
+::-webkit-scrollbar {
+    display: none;
+    }
 .friend-search-container{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    /* border: 1px solid rgba(131, 128, 128, 0.274); */
-    background-image: linear-gradient(to bottom , rgba(131, 128, 128, 0.274) , rgba(255, 255, 255, 0.932));
+    border: 1px solid rgba(151, 150, 150, 0.308);
+    border-radius: 10px;
     height: 500px;
     overflow: scroll;
     margin-left: 10%;
+}
+.friend-container h1 {
+    margin-bottom: 50px;
 }
 .friend-profile-pic{
     min-width: 80px;
@@ -41,13 +47,15 @@
     flex-direction: row;
     justify-content: space-between;
     width: 95%;
-    border: solid 2px rgba(131, 128, 128, 0.274);
-    padding: 1%;
-    margin-bottom: 1.5%;
-    background-image: linear-gradient( rgba(180, 218, 231, 0.397), rgba(217, 238, 245, 0.281));
-    -webkit-box-shadow: 1px 1px 5px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow:    1px 1px 5px 2px #ccc;  /* Firefox 3.5 - 3.6 */
-    box-shadow:         1px 1px 5px 2px #ccc;
+    /* border: solid 2px rgba(131, 128, 128, 0.274); */
+    padding: 2%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    /* background-image: linear-gradient( rgba(184, 183, 183, 0.397), rgba(248, 246, 246, 0.281)); */
+    background-color: rgba(230, 228, 228, 0.527);
+    -webkit-box-shadow: 1px 1px 1px 1px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 1px 1px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 1px 1px #ccc;
     height: 100px;
 }
 .friend-card-info{
