@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal, Form, Input, TextArea } from "semantic-ui-react";
 import PhotographyManager from "../../modules/PhotographyManager";
 import keys from "../../keys/ApiKies";
+import moment from "moment";
 
 const NewPhotoModal = props => {
   const [newPhoto, setNewPhoto] = useState({title:"", description:"",date:"", userId:"", likes:""});
