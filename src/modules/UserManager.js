@@ -28,6 +28,15 @@ export default {
             },
             body: JSON.stringify(obj)
         }).then(r=>r.json())
+    },
+    patchNewImage(imageUrl, userId) {
+        return fetch(`${remoteUrl}users/${userId}`, {
+            method: "PATCH",
+            headers: {
+                'content-type' : "application/json"
+            },
+            body: JSON.stringify({"profPic": imageUrl})
+        }).then(r=>r.json())
     }
     
 }

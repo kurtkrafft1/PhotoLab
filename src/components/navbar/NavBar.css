@@ -27,6 +27,15 @@ header {
   align-self: center !important;
   width: 100%;
 }
+.title-home-logged{
+  margin-top: 3%;
+  color: black;
+  font-size: 50px;
+  font-family: "Arial", sans-serif;
+  align-self: center !important;
+  width: 100%;
+  margin-left:25%;
+}
 header h1:hover {
   color: black;
   opacity: 0.8;
@@ -58,7 +67,7 @@ header h1:hover {
   display: flex;
   width: 100%;
   justify-content: space-between; 
-  padding-left: 10%;
+  /* padding-left: 10%; */
 }
 .div-test-2{
   display: flex;
@@ -85,7 +94,9 @@ header h1:hover {
 .exclamation{
   color: rgb(243, 64, 64) !important;
 }
-
+.home-title{
+  margin-right: 100px;
+}
 
 @media only screen and (max-width: 800px) {
   .userInfo {

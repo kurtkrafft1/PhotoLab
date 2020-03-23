@@ -11,7 +11,7 @@ import Login from "./auth/Login"
 import CreateCardForm from "./createform/CreateCardForm";
 import StarredPhotos from './myPhotos/StarredPhotos';
 import MyProfile from "./myProfile/MyProfile"
-
+import NewProfilePicture from "./myProfile/NewProfilePicture"
 
 const ApplicationViews = props => {
     const setUser = props.setUser;
@@ -122,6 +122,16 @@ const ApplicationViews = props => {
                 return <MyProfile {...props} />
             } else {
                 return <Redirect to ="/login" />
+            }
+        }}
+        />
+        <Route 
+        path="/editProfilePicture"
+        render={props=> {
+            if(hasUser){
+                return <NewProfilePicture {...props} setUser={setUser} />
+            } else {
+                return <Redirect to="/login" />
             }
         }}
         />

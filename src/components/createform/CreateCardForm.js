@@ -29,10 +29,12 @@ const CreateCardForm = (props) => {
     const croppingImage = async e => {
         e.preventDefault()
         try {
+            const reader = new FileReader();
             const croppedImage = await getCroppedImg(
                 uploadedImage.src,
                 stateCroppedAreaPixels
               )
+
               console.log(croppedImage)
               setImage({profPic: croppedImage})
               setHasCropped(true)
