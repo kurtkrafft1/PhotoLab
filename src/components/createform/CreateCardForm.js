@@ -2,7 +2,8 @@ import React, { useState, useCallback } from "react" ;
 import UserManager from "../../modules/UserManager";
 import keys from "../../keys/ApiKies";
 import Cropper from 'react-easy-crop'
-import Slider from '@material-ui/core/Slider'
+import Slider from '@material-ui/core/Slider';
+import getCroppedImg from "./cropImage";
 import "./create.css"
 
 const CreateCardForm = (props) => {
@@ -13,8 +14,11 @@ const CreateCardForm = (props) => {
     const [uploadedImage, setUploadedImage] = useState({src: ""})
     const [crop, setCrop] = useState({ x: 0, y: 0 })
     const [zoom, setZoom] = useState(1)
+    const [hasCropped, setHasCropped] = useState(false)
+    const [ stateCroppedAreaPixels, setCroppedAreaPixels] = useState({})
     const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
-      console.log(croppedArea, croppedAreaPixels)
+    //   console.log(croppedArea, croppedAreaPixels)
+    setCroppedAreaPixels(croppedAreaPixels)
     }, [])
 
     const handleFieldChange = evt => {
@@ -22,16 +26,47 @@ const CreateCardForm = (props) => {
         stateToChange[evt.target.id] = evt.target.value
         setUser(stateToChange)
     }
+    const croppingImage = async e => {
+        e.preventDefault()
+        try {
+            const croppedImage = await getCroppedImg(
+                uploadedImage.src,
+                stateCroppedAreaPixels
+              )
+              console.log(croppedImage)
+              setImage({profPic: croppedImage})
+              setHasCropped(true)
+          
+            }   
+            catch (e) {
+                console.log(e)
+            } 
+    }
     const handleFile = e => {
+        if(hasCropped===true){
+            setImage({profPic: ""})
+            setUploadedImage({src:""})
+            setCrop({x:0, y:0})
+            setHasCropped(false)
+            const fileReader = new FileReader()
+            fileReader.onloadend = () => {
+                setUploadedImage({src: fileReader.result })
+            }   
+            fileReader.readAsDataURL(e.target.files[0])
+        } else {
         const fileReader = new FileReader()
         fileReader.onloadend = () => {
             setUploadedImage({src: fileReader.result })
         }   
         fileReader.readAsDataURL(e.target.files[0])
     }
-    const postNewAccount = evt => {
+    }
+    const postNewAccount =  evt => {
         evt.preventDefault()
-        if(user.username===""|| user.password===""||user.email===""){
+         if(hasCropped===false){
+             window.alert('Please crop your image')
+         }
+        else if(user.username===""|| user.password===""||user.email===""){
             window.alert("Please fill out all the required fields")
         }else if (user.username !== user.confirmUsername){
             window.alert("The usernames entered do not match")
@@ -44,7 +79,6 @@ const CreateCardForm = (props) => {
                     profPic: "https://vectorified.com/images/no-profile-picture-icon-14.png"
                 }
                 UserManager.postNewProfile(newUser).then(jsonUser=> {
-                  console.log(jsonUser)
                     setCredentials(newUser)
                     setIsLoading(true)
                     props.setUser(jsonUser)
@@ -66,24 +100,8 @@ const CreateCardForm = (props) => {
             }
            
         }
+        
     }
-    const uploadImage = async e => {
-        const files = e.target.files;
-        const data = new FormData();
-        data.append("file", files[0]);
-        data.append("upload_preset", "photoLab");
-        setIsLoading(true);
-        const res = await fetch(
-          `https://api.cloudinary.com/v1_1/${keys.cloudinary}/image/upload`,
-          {
-            method: "POST",
-            body: data
-          } 
-        );
-        const file = await res.json();
-        setImage({ profPic: file.secure_url });
-        setIsLoading(false);
-      };
     return (
         <>
          <form className="login-form" >
@@ -116,7 +134,7 @@ const CreateCardForm = (props) => {
           data-form-data="{ 'transformation': {'crop':'limit','tags':'samples','width':3000,'height':2000}}"
         />
           <label htmlFor="inputprofPic">Profile Pic</label>
-          {uploadedImage.src==="" ? ( <div className="crop-container"><img className="crop-image" src="https://seeba.se/wp-content/themes/consultix/images/no-image-found-360x260.png"alt="none-found" /></div>)
+          {image.profPic!== "" ? ( <div className="crop-container"><img className="crop-image" src={image.src}/></div>) : uploadedImage.src==="" ? ( <div className="crop-container"><div className="no-image-container" id="center-img"><img className="center-image" src="https://seeba.se/wp-content/themes/consultix/images/no-image-found-360x260.png"alt="none-found"/></div></div>)
           : (
             <>
             <div className="crop-container">
@@ -150,20 +168,15 @@ const CreateCardForm = (props) => {
         <picture className="center-pic">
               <img src={user.profPic} className="create-pic" />
           </picture>
-          {/* <div className="newPhoto">
-      {isLoading ? (
-        <h3> Loading...</h3>
-      ) : (
-        image.profPic==="" ? (
-          <img src="https://seeba.se/wp-content/themes/consultix/images/no-image-found-360x260.png" style={{width: '300px'}}alt="none-found" />
-        ) :(
-        <img src={image.profPic} style={{width: '300px'}}alt="upload-photos" />)
-      )}
-    </div> */}
-        <div className="button-container">
+        <div className="button-container-create">
+        <button type="submit" className="ui inverted primary button" onClick={croppingImage}>Crop</button>
         <button type="submit" className="ui inverted primary button" onClick={postNewAccount}>Sign up!</button>
         </div>
+        {image.profPic === "" ? null : <div className="cropped-container"> <img src={image.profPic} alt="ral"  id="cropped-image"/></div>}
       </fieldset>
+    
+         
+
     </form>
         </>
     )

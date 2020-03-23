@@ -29,3 +29,22 @@
   .slider {
     padding: 22px 0px;
   }
+  #cropped-image{
+      max-width: 100px;
+      align-self: center;
+  }
+  .button-container-create{
+    width: 100%;
+    color: black;
+      display: flex;
+      justify-content: flex-end;    
+      padding-right: 2.5%;
+      flex-direction: row;
+      margin-top: 1%    ;
+  }
+.no-image-container{
+    padding: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
