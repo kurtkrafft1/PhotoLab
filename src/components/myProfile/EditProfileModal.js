@@ -91,18 +91,15 @@ const EditProfileModal = props => {
                             onChange={handleFieldChange}
                             value={editedUser.aboutMe}
                         />
-                    <Form.Field>
-                    <label htmlFor="eventImage">Please upload or find an image</label>
-            <input
-              name="file"
-              id="eventImage"
-              type="file"
-              className="file-upload"
-              data-cloudinary-field="image_id"
-              onChange={uploadImage}
-              data-form-data="{ 'transformation': {'crop':'limit','tags':'samples','width':3000,'height':2000}}"
-            />
-                    </Form.Field>
+                    <Form.Field
+                            id='email'
+                            control={Input}
+                            label='email'
+                            placeholder='Email...'
+                            onChange={handleFieldChange}
+                            value={editedUser.email}
+                        />
+                
                     <div className="newPhoto">
              {isLoading ? <h1>Loading...</h1> : (
              image.profPic===""? (<img src={editedUser.profPic} alt="new one" id="user-photo-edit" />) :(
