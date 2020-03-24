@@ -4,6 +4,7 @@ import MyPhotoEditModal from "./MyPhotoEditForm";
 import { confirmAlert } from 'react-confirm-alert'; 
 import CommentCard from "./CommentCard.js";
 import "./MyPhotoDetails.css";
+import { animateScroll } from "react-scroll";
 
 const MyPhotoDetails = props => {
     const [photo, setPhoto] = useState({title: "", description: "", url:"", id:"", date:""})
@@ -16,7 +17,11 @@ const MyPhotoDetails = props => {
         handleModal(!modalOpen)
     };
 
-    
+    const scrollToBottom = ()=> {
+      animateScroll.scrollToBottom({
+        containerId: "comment-card-container"
+      });
+  }
     const HandleDelete = () => {
         confirmAlert({
             title: 'Confirm to submit',
@@ -54,18 +59,10 @@ const MyPhotoDetails = props => {
         })
       }
     }
-    const testForCommentContainer = () => {
-      var objDiv = document.getElementById("your_div");
-      // objDiv.scrollTop = objDiv.scrollHeight;
-      if(objDiv===null){
-        return false
-      } else {
-        return true
-      }
-    }
 
     useEffect(()=> {
       window.scrollTo(0, 0)
+
         PhotographyManager.getOne(props.photoId).then(photo=> {
            setPhoto({
                description: photo.description,
@@ -74,17 +71,14 @@ const MyPhotoDetails = props => {
                id: props.photoId,
                date: photo.date
            })
-           if(testForCommentContainer){
-             console.log("Its there")
-            var objDiv = document.getElementById("comment-card-container");
-            objDiv.scrollTop = objDiv.scrollHeight;
-           } 
+         
         
     }).then(()=> {
       PhotographyManager.getCommentsForPhoto(props.photoId).then(commentsFromApi=> setComments(commentsFromApi))
       setRefreshComments(false)
       setNewMessage({message:""})
      })
+  
   },[refreshComments])
    
     if(photo.description===undefined){
