@@ -9,6 +9,7 @@ const FriendsPhotoList = props => {
     const [friend, setFriend] = useState({})
 
     useEffect(()=> {
+        window.scrollTo(0, 0)
         PhotographyManager.getAllWithId(props.friendId).then(photosFromApi=> {
             setFriendsPhotos(photosFromApi)
         }).then(()=> {

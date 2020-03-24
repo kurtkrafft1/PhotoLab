@@ -18,6 +18,7 @@ header {
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
   /* box-shadow:  0 8px 6px -6px black;  */
+  z-index: 1;
 }
 .title-home {
   margin-top: 3%;
@@ -93,10 +94,9 @@ header h1:hover {
 }
 .exclamation{
   color: rgb(243, 64, 64) !important;
+  z-index: 1 !important;
 }
-.home-title{
-  margin-right: 100px;
-}
+
 
 @media only screen and (max-width: 800px) {
   .userInfo {

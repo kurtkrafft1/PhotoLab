@@ -15,6 +15,7 @@ const MyPhotoDetails = props => {
     const toggleModal = () => {
         handleModal(!modalOpen)
     };
+
     
     const HandleDelete = () => {
         confirmAlert({
@@ -53,9 +54,18 @@ const MyPhotoDetails = props => {
         })
       }
     }
+    const testForCommentContainer = () => {
+      var objDiv = document.getElementById("your_div");
+      // objDiv.scrollTop = objDiv.scrollHeight;
+      if(objDiv===null){
+        return false
+      } else {
+        return true
+      }
+    }
 
     useEffect(()=> {
-       
+      window.scrollTo(0, 0)
         PhotographyManager.getOne(props.photoId).then(photo=> {
            setPhoto({
                description: photo.description,
@@ -64,6 +74,12 @@ const MyPhotoDetails = props => {
                id: props.photoId,
                date: photo.date
            })
+           if(testForCommentContainer){
+             console.log("Its there")
+            var objDiv = document.getElementById("comment-card-container");
+            objDiv.scrollTop = objDiv.scrollHeight;
+           } 
+        
     }).then(()=> {
       PhotographyManager.getCommentsForPhoto(props.photoId).then(commentsFromApi=> setComments(commentsFromApi))
       setRefreshComments(false)
@@ -109,7 +125,7 @@ const MyPhotoDetails = props => {
                
                <div className="comment-container">
                  <div className="comment-header"><h1>Comments...</h1></div>
-                 <div className="comment-card-container">
+                 <div className="comment-card-container" id="comment-card-container"> 
                    {
                      comments.map(comment=> {
                        return <CommentCard key={comment.id} comment={comment} refreshComments={refreshComments} setRefreshComments={setRefreshComments}/>

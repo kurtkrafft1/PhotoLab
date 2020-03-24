@@ -4,26 +4,14 @@ import { Route , withRouter, NavLink} from 'react-router-dom';
 import './NavBar.css';
 import FriendsManager from "../../modules/FriendsManager"
 const Navbar = props => {
-    const [hasRequests, setHasRequests] = useState(false)
+
     const user= JSON.parse(sessionStorage.getItem('credentials'))
 
     const handleLogout = () => {
         props.clearUser();
        window.href="/"
       }
-      useEffect(()=> {
-          if(props.hasUser){
-
-          
-        FriendsManager.getAllRequests(user.id).then(arr=> {
-            if(arr.length>0){
-                setHasRequests(true)
-            } else {
-                return null
-            }
-        })}
-    
-      }, [])
+  
     
     if(props.hasUser){
         return (
@@ -40,7 +28,7 @@ const Navbar = props => {
                 <picture>
                     <img src={user.profPic} alt="you!" className="profPicIcon" onClick={()=> props.history.push('/myprofile')}/>
                 </picture>
-                {hasRequests===true ? ( <i class="exclamation circle icon"></i> ): (null)}
+                {props.hasRequests===true ? ( <i className="exclamation circle icon"></i> ): (null)}
             </div>
             </div>
             </div>

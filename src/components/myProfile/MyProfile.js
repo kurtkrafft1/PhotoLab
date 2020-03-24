@@ -26,17 +26,21 @@ const MyProfile = props => {
             }
             FriendsManager.makeNewFriendRequest(newFriend).then(()=> {
                 setRefresh(!refresh)
+                props.setHasRequests(!props.hasRequests)
             })
         })
     }
     const denyRequest = (requestId) => {
         FriendsManager.updateExistingFriendRequestToDenied(requestId).then(()=> {
             setRefresh(!refresh)
+            props.setRefreshNav(!props.refreshNav)
+            
         })
     }
 
 
     useEffect(()=> {
+        window.scrollTo(0, 0)
         FriendsManager.getAllRequests(activeUser.id).then(setRequests).then(()=> {
             UserManager.getUserInfo(activeUser.id).then(userFromApi=> setUser(userFromApi[0]))
         })

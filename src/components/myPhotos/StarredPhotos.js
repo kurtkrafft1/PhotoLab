@@ -29,6 +29,7 @@ const StarredPhotos = props => {
     }
 
     useEffect(()=> {
+      window.scrollTo(0, 0)
         PhotographyManager.getStarredPhotos(user.id).then(photosFromApi=> {
             setStarredPhotos(photosFromApi)
             
@@ -41,10 +42,10 @@ const StarredPhotos = props => {
       </div>
       <div className="button-container">
       <div className="left-or-right-buttons">
-            <div className="ui left attached button" role="button" tabindex="0" onClick={()=> {props.history.push('/myphotos')}}>
+            <div className="ui left attached button" role="button" tabIndex="0" onClick={()=> {props.history.push('/myphotos')}}>
               My Photos
             </div>
-            <div className="ui right attached button" role="button" tabindex="0"style={{opacity:0.8}}>
+            <div className="ui right attached button" role="button" tabIndex="0"style={{opacity:0.8}}>
               Starred Photos
             </div>
           </div>

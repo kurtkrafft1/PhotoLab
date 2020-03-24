@@ -100,12 +100,7 @@ const EditProfileModal = props => {
                             value={editedUser.email}
                         />
                 
-                    <div className="newPhoto">
-             {isLoading ? <h1>Loading...</h1> : (
-             image.profPic===""? (<img src={editedUser.profPic} alt="new one" id="user-photo-edit" />) :(
-                 <img src={image.profPic} alt="new one" id="user-photo-edit" />
-             ))}           
-        </div>
+            <br></br>
                 </Form>
                 <div className="login-form=buttons">
                 <Button onClick={postEditedUser}>Submit</Button>

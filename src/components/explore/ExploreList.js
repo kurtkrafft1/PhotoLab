@@ -7,6 +7,7 @@ const ExploreList = props => {
   const [randomPhotos, setRandomPhotos] = useState([]);
 
   useEffect( ()=> {
+    window.scrollTo(0, 0)
     const arr = []
    PhotographyManager.getAll().then(allPhotos=> {
 let counter = 0;

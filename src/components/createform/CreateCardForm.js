@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from "react" ;
 import UserManager from "../../modules/UserManager";
-import keys from "../../keys/ApiKies";
 import Cropper from 'react-easy-crop'
 import Slider from '@material-ui/core/Slider';
 import getCroppedImg from "./cropImage";

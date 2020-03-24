@@ -40,3 +40,7 @@
     display: flex;
     justify-content: space-between;
 }
+#gold{
+  color: rgba(250, 179, 46, 0.699) !important;
+
+}

@@ -64,6 +64,7 @@ const handleAdd = ( friendId) => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     FriendsManager.getAllApprovedFriendsByActiveUserId(user.id).then(
       friendsFromApi => {
         setFriends(friendsFromApi);

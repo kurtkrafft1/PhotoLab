@@ -32,6 +32,7 @@ const FriendsPhotoDetails = props => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     PhotographyManager.getOne(props.photoId)
       .then(photoFromApi => setFriendPhoto(photoFromApi))
       .then(() => {

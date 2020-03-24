@@ -25,6 +25,7 @@ const MyPhotoList = props => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     getAllPhotos();
     setRefreshPhotos(false);
   }, [refreshPhotos]);
