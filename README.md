@@ -1,68 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A front-end capstone project from [Kurt Krafft](https://github.com/kurtkrafft) for [Nashville Software School C38](https://github.com/nss-day-cohort-38).
 
-## Available Scripts
+## Brief Proposal
 
-In the project directory, you can run:
+A minimalistic photo storage and sharing app without all the social pressure and clutter that comes with other photo sharing apps. A user can add friends, view their photos, view random peoples photos, and comment on photos as well. This values users privacy and also their right to control their friends.
 
-### `npm start`
+## MVP Definition
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Written in React.
+* Users can create account, login via Session Storage, and logout
+* Ability to create, read, update, delete "Photos"
+* Ability to create, read, update, delete "Comments"
+* Use Semantic UI modals and create a simple yet beautiful looking web app
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Dream Stretch Goals
+* Cropping profile pictures so that they will appear the same
+* Firebase Authentication
+* Friend requests
+* Styling
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Setup
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Steps to get started:
+1. `git clone git@github.com:kurtkrafft1/PhotoLab-Real.git`
+1. `cd` into the directory it creates
+1. cd into `src/api`  folder
+1. enter `json-server -p 5002 -w photoLab.json`
+1. press ctrl+t in your terminal and direct to the src folder of the Photolab-Real directory
+1.  enter `npm start`
+1. wait, when all the dependencies are loaded you may enter `npm start` and view the project
+1. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Overview
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This App is a simple photo sharing app where a user will be able to upload photos from their personal collection. They can view their friends photos and request to be friends of other users. They can comment on their own photos as well as their friends photos. They can also view their profile and edit their short bio and username. This app gives the user the ability to post freely from their computer without having strangers following them and seeing everything they do. In order to do so, they "stranger" will have to add the user and then get approved by the user to view their data. 
 
-### `npm run eject`
+(*) **Note: this is not true authentication.** Email addresses are saved in clear text in the JSON database, and anyone who knows your email could login to see information inside database. Do not store any sensitive information, including, but not limited to birthdates, social security numbers, mother's maiden names, names of first pets, and/or shoe sizes.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technologies Used
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project utilizes the following:
+* This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* [Semantic UI](https://react.semantic-ui.com/) for buttons, icons, data-tooltips
+* [React Confirm Alert](https://www.npmjs.com/package/react-confirm-alert) for confirm alerts
+* [React Router](https://reacttraining.com/react-router/) for page routing
+* [React-Burger-Menu](https://github.com/negomi/react-burger-menu) for menu, flexible formatting
+* [React-easy-crop](https://github.com/ricardo-ch/react-easy-crop) for cropping photos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Skills Utilized
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+We utilized all skills and concepts learned up to this point in our time here at NSS, including:
 
-## Learn More
+1. React: hooks, state, props, routes
+1. API calls with: POST, PUT, PATCH, DELETE, and GET (with expand, embed)
+1. Javascript: functions, objects, arrays, mapping
+1. Persistent data storage with JSON Server
+1. Github Scrum workflow
+1. CSS styling
+1. Modular code
+1. Semantic HTML
+1. [Valid HTML5](https://validator.w3.org/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Database Diagram
+![PhotoLab DBDiagram](./src/DBDIAGRAM/photoLab(3).png)

@@ -14,6 +14,7 @@ const CreateCardForm = (props) => {
     const [crop, setCrop] = useState({ x: 0, y: 0 })
     const [zoom, setZoom] = useState(1)
     const [hasCropped, setHasCropped] = useState(false)
+    const [fileAdded, setFileAdded] = useState(false)
     const [ stateCroppedAreaPixels, setCroppedAreaPixels] = useState({})
     const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
     //   console.log(croppedArea, croppedAreaPixels)
@@ -37,6 +38,7 @@ const CreateCardForm = (props) => {
               console.log(croppedImage)
               setImage({profPic: croppedImage})
               setHasCropped(true)
+              setFileAdded(true)
           
             }   
             catch (e) {
@@ -44,6 +46,7 @@ const CreateCardForm = (props) => {
             } 
     }
     const handleFile = e => {
+        setFileAdded(true)
         if(hasCropped===true){
             setImage({profPic: ""})
             setUploadedImage({src:""})
@@ -64,43 +67,50 @@ const CreateCardForm = (props) => {
     }
     const postNewAccount =  evt => {
         evt.preventDefault()
-         if(hasCropped===false){
-             window.alert('Please crop your image')
-         }
-        else if(user.username===""|| user.password===""||user.email===""){
-            window.alert("Please fill out all the required fields")
-        }else if (user.username !== user.confirmUsername){
-            window.alert("The usernames entered do not match")
-        }else {
-            if(image.profPic===""){
-                const newUser = {
-                    username: user.username,
-                    email: user.email,
-                    aboutMe: "",
-                    profPic: "https://vectorified.com/images/no-profile-picture-icon-14.png"
+        UserManager.checkUsername(user.username).then(arr=> {
+            if(arr.length>0){
+                window.alert("I am sorry, that username is taken")
+            } else  {
+                if(hasCropped===false&&fileAdded===true){
+                    window.alert('Please crop your image')
                 }
-                UserManager.postNewProfile(newUser).then(jsonUser=> {
-                    setCredentials(newUser)
-                    setIsLoading(true)
-                    props.setUser(jsonUser)
-                    props.history.push('/')})
-            } else {
-                const newUser = {
-                    username: user.username,
-                    email: user.email,
-                    aboutMe: "",
-                    profPic: image.profPic
-                }
-                UserManager.postNewProfile(newUser).then(jsonUser=> {
-                    setIsLoading(true)
-                    setCredentials(newUser)
-                    props.setUser(jsonUser)
-                    props.history.push('/')
-
-                })
+               else if(user.username===""|| user.password===""||user.email===""){
+                   window.alert("Please fill out all the required fields")
+               }else if (user.username !== user.confirmUsername){
+                   window.alert("The usernames entered do not match")
+               }else {
+                   if(image.profPic===""){
+                       const newUser = {
+                           username: user.username,
+                           email: user.email,
+                           aboutMe: "",
+                           profPic: "https://vectorified.com/images/no-profile-picture-icon-14.png"
+                       }
+                       UserManager.postNewProfile(newUser).then(jsonUser=> {
+                           setCredentials(newUser)
+                           setIsLoading(true)
+                           props.setUser(jsonUser)
+                           props.history.push('/')})
+                   } else {
+                       const newUser = {
+                           username: user.username,
+                           email: user.email,
+                           aboutMe: "",
+                           profPic: image.profPic
+                       }
+                       UserManager.postNewProfile(newUser).then(jsonUser=> {
+                           setIsLoading(true)
+                           setCredentials(newUser)
+                           props.setUser(jsonUser)
+                           props.history.push('/')
+       
+                       })
+                   }
+                  
+               }
             }
-           
-        }
+        })
+         
         
     }
     return (

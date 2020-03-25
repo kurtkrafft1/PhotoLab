@@ -23,6 +23,7 @@ const enterKeyPress = e => {
     if (e.charCode === 13){
         e.preventDefault()
         UserManager.findUserByUsername(friendSearch.username).then(friendsFromApi=> {
+
             setFriendResults(friendsFromApi)
         })
     }
@@ -104,7 +105,7 @@ const handleAdd = ( friendId) => {
                 {
                     friendResults.map(friend=> {
                         return (
-                            <FriendAddCard friend={friend} key={friend.id} handleAdd={handleAdd} {...props} />
+                            <FriendAddCard friend={friend} key={friend.id} handleAdd={handleAdd} {...props} friends={friends}/>
                         )
                     })
                 }

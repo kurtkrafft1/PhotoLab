@@ -13,7 +13,7 @@ const FriendRequestCard = props => {
         <>
         <div className="friend-card">
             <div className="request-photo-card">
-                <picture>
+                <picture className="prof-pic-picture">
                     <img src={requestUser.profPic} alt='They added you' id="request-user-prof-pic" />
                 </picture>
             </div>

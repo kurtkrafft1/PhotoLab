@@ -64,13 +64,18 @@ const MyPhotoDetails = props => {
       window.scrollTo(0, 0)
 
         PhotographyManager.getOne(props.photoId).then(photo=> {
-           setPhoto({
-               description: photo.description,
-               title: photo.title,
-               url: photo.url,
-               id: props.photoId,
-               date: photo.date
-           })
+          if (photo.userId===user.id){
+            setPhoto({
+              description: photo.description,
+              title: photo.title,
+              url: photo.url,
+              id: props.photoId,
+              date: photo.date
+          })
+          }else {
+            props.history.push('/myphotos')
+          }
+         
          
         
     }).then(()=> {

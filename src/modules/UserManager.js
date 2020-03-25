@@ -37,6 +37,9 @@ export default {
             },
             body: JSON.stringify({"profPic": imageUrl})
         }).then(r=>r.json())
+    },
+    checkUsername(username){
+        return fetch(`${remoteUrl}users?username=${username}`).then(r=>r.json())
     }
     
 }
