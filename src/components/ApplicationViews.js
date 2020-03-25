@@ -16,6 +16,10 @@ import NewProfilePicture from "./myProfile/NewProfilePicture"
 const ApplicationViews = props => {
     const setUser = props.setUser;
     const hasUser = props.hasUser
+    const hasRequests = props.hasRequests
+    const setHasRequests = props.setHasRequests
+    const setRefreshNav = props.setRefreshNav
+    const refreshNav = props.refreshNav
 
     return (
         <>
@@ -119,7 +123,7 @@ const ApplicationViews = props => {
         path="/myprofile"
         render={props => {
             if(hasUser){
-                return <MyProfile {...props} />
+                return <MyProfile {...props} hasRequests={hasRequests} setHasRequests={setHasRequests} refreshNav={refreshNav} setRefreshNav={setRefreshNav}/>
             } else {
                 return <Redirect to ="/login" />
             }

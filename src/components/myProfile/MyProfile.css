@@ -25,6 +25,10 @@
     background: rgba(224, 223, 223, 0.315);
     padding-bottom: 10%;
 }
+#user-profile-picture {
+    min-width: 400px;
+    max-width: 400px;
+}
 .request-card-container{
     display:flex;
     width: 75%;
@@ -44,6 +48,10 @@
 }
 .request-card picture {
     margin-right: 2%;
+
+}   
+.request-photo-card picture {
+    margin-bottom: 50%;
 }
 .accept-user-or-deny-user{
     align-self: flex-end;
@@ -54,7 +62,47 @@
 .add_space{
     margin-left: 20% !important;
 }
-/* .request-photo-card{
-    max-height: 100px;
-    overflow: hidden;
-} */
+
+.current-image-container{
+    margin-top: 5%;
+
+}
+.center-image{
+    display: block;
+    margin: auto;
+    max-width: 200px !important;
+}
+.crop-image{
+    max-width: 200px !important;
+    /* margin-top: 5% !important;
+    margin-left: 30% !important; */
+    display: block !important;
+    margin: auto !important;
+}
+
+.renew-photo-form{
+    margin-top:20px;
+    height:500px;
+    display:flex;
+    align-items: center;
+    /* background: url("https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539_960_720.jpg") no-repeat center center fixed;  */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .crop-container-new {
+    position: absolute;
+    /* display: flex; */
+    /* width: 50%; */
+    margin: auto;
+    margin-top: 450px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    max-width: 600px !important;
+
+
+  }

@@ -56,10 +56,14 @@ const NewProfilePicture = props => {
     }
     const patchNewImage = e => {
         e.preventDefault()
+        if(hasCropped===false){
+            window.alert("Please crop your photo")
+        } else {
         UserManager.patchNewImage(image.profPic, activeUser.id).then(user=> {
             props.setUser(user)
             props.history.push('/myprofile')
         })
+    }
 
     }
     useEffect(()=> {
@@ -70,7 +74,7 @@ const NewProfilePicture = props => {
     return (
         <>
         <h1>Change Profile Picture</h1>
-        <form className="login-form">
+        <form className="renew-photo-form">
             <fieldset className="sign-in-form">
             <input
           name="file"
@@ -82,10 +86,10 @@ const NewProfilePicture = props => {
           data-form-data="{ 'transformation': {'crop':'limit','tags':'samples','width':3000,'height':2000}}"
         />
           <label htmlFor="inputprofPic">Profile Pic</label>
-          {image.profPic!== "" ? ( <div className="crop-container"><img className="crop-image" src={image.profPic}/></div>) : uploadedImage.src==="" ? ( <div className="crop-container"><div className="no-image-container" id="center-img"><img className="center-image" src={currentPhoto.img}alt="current one"/></div></div>)
+          {image.profPic!== "" ? ( <div className="crop-container-new"><img className="crop-image" id="center-img" src={image.profPic}/></div>) : uploadedImage.src==="" ? ( <div className="crop-container-new"><div className="current-image-container" id="center-img"><img className="center-image" src={currentPhoto.img}alt="current one"/></div></div>)
           : (
             <>
-            <div className="crop-container">
+            <div className="crop-container-new">
         <Cropper
           image={uploadedImage.src}
           crop={crop}

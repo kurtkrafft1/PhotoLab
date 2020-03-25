@@ -33,6 +33,9 @@ export default {
     getOneFriendByActiveUserIdAndUserId(activeUserId, userId) {
         return fetch(`${remoteUrl}/friends?activeUserId=${userId}&userId=${activeUserId}`).then(r=>r.json())
     },
+    getOneApprovedFriendByActiveUserIdAndUserId(activeUserId, userId) {
+        return fetch(`${remoteUrl}/friends?activeUserId=${activeUserId}&userId=${userId}&statusId=1`).then(r=>r.json())
+    },
     getPendingRequestWithUserIdAndFriendId(activeUserId, userId){
         return fetch(`${remoteUrl}/friends?activeUserId=${activeUserId}&userId=${userId}`).then(r=>r.json())
     },
@@ -56,6 +59,9 @@ export default {
             },
             body: JSON.stringify({statusId: 3})
         }).then(r=>r.json())
+    },
+    getAllRequestsByActiveUserId(activeUserId) {
+        return fetch(`${remoteUrl}/friends?activeUserId=${activeUserId}&statusId=2`).then(r=>r.json())
     }
     
 }

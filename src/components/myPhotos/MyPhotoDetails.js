@@ -4,6 +4,7 @@ import MyPhotoEditModal from "./MyPhotoEditForm";
 import { confirmAlert } from 'react-confirm-alert'; 
 import CommentCard from "./CommentCard.js";
 import "./MyPhotoDetails.css";
+import { animateScroll } from "react-scroll";
 
 const MyPhotoDetails = props => {
     const [photo, setPhoto] = useState({title: "", description: "", url:"", id:"", date:""})
@@ -15,7 +16,12 @@ const MyPhotoDetails = props => {
     const toggleModal = () => {
         handleModal(!modalOpen)
     };
-    
+
+    const scrollToBottom = ()=> {
+      animateScroll.scrollToBottom({
+        containerId: "comment-card-container"
+      });
+  }
     const HandleDelete = () => {
         confirmAlert({
             title: 'Confirm to submit',
@@ -55,20 +61,29 @@ const MyPhotoDetails = props => {
     }
 
     useEffect(()=> {
-       
+      window.scrollTo(0, 0)
+
         PhotographyManager.getOne(props.photoId).then(photo=> {
-           setPhoto({
-               description: photo.description,
-               title: photo.title,
-               url: photo.url,
-               id: props.photoId,
-               date: photo.date
-           })
+          if (photo.userId===user.id){
+            setPhoto({
+              description: photo.description,
+              title: photo.title,
+              url: photo.url,
+              id: props.photoId,
+              date: photo.date
+          })
+          }else {
+            props.history.push('/myphotos')
+          }
+         
+         
+        
     }).then(()=> {
       PhotographyManager.getCommentsForPhoto(props.photoId).then(commentsFromApi=> setComments(commentsFromApi))
       setRefreshComments(false)
       setNewMessage({message:""})
      })
+  
   },[refreshComments])
    
     if(photo.description===undefined){
@@ -109,7 +124,7 @@ const MyPhotoDetails = props => {
                
                <div className="comment-container">
                  <div className="comment-header"><h1>Comments...</h1></div>
-                 <div className="comment-card-container">
+                 <div className="comment-card-container" id="comment-card-container"> 
                    {
                      comments.map(comment=> {
                        return <CommentCard key={comment.id} comment={comment} refreshComments={refreshComments} setRefreshComments={setRefreshComments}/>
