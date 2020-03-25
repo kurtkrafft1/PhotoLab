@@ -63,4 +63,4 @@ We utilized all skills and concepts learned up to this point in our time here at
 1. [Valid HTML5](https://validator.w3.org/)
 
 ## Database Diagram
-![PhotoLab DBDiagram](./src/DBDIAGRAM/photoLab(3).png)
+![DBDiagram] (/src/DBDIAGRAM/photoLab (3).png)
