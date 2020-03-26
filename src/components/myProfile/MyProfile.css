@@ -1,5 +1,8 @@
 .profile-container{
-    background: rgba(224, 223, 223, 0.315);
+    border: 5px solid rgba(204, 203, 203, 0.315);
+    border-radius: 10px;
+    margin: 3px;
+    background: rgba(243, 240, 240, 0.527);
     display: flex;
     justify-content: space-between;
 
@@ -14,7 +17,7 @@
 }
 .profile-edit-icon{
     margin-top: 190px;
-    background: rgba(224, 223, 223, 0.315);
+    /* background: rgba(224, 223, 223, 0.315); */
     display: flex;
     justify-content: flex-end;
 }
@@ -22,12 +25,20 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: rgba(224, 223, 223, 0.315);
+    /* background: rgba(224, 223, 223, 0.315); */
+    background: rgba(243, 240, 240, 0.527);
+    border: 5px solid rgba(224, 223, 223, 0.315);
+    border-radius: 10px;
     padding-bottom: 10%;
+    margin: 3px;
 }
 #user-profile-picture {
     min-width: 400px;
     max-width: 400px;
+}
+#user-profile-picture:hover{
+    opacity: 0.8;
+    cursor: pointer;
 }
 .request-card-container{
     display:flex;

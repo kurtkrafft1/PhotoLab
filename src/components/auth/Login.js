@@ -38,7 +38,7 @@ const Login = props => {
             required="" autoFocus="" />
           <label htmlFor="inputEmail">Email address</label>
 
-          <input onChange={handleFieldChange} type="password"
+          <input onChange={handleFieldChange} type="username"
             id="username"
             placeholder="Username"
             required="" />

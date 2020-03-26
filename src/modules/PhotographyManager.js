@@ -10,6 +10,9 @@ export default {
     getOne(id) {
         return fetch(`${remoteUrl}photos/${id}`).then(r=>r.json())
     },
+    getOneAndExpandUser(id) {
+        return fetch(`${remoteUrl}photos/${id}?_expand=user`).then(r=>r.json())
+    },
     updatePhoto(editedPhoto) {
         return fetch (`${remoteUrl}photos/${editedPhoto.id}`, {
             method: "PUT",
