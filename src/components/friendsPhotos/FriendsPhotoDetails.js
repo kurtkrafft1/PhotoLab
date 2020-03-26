@@ -33,7 +33,7 @@ const FriendsPhotoDetails = props => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    PhotographyManager.getOne(props.photoId)
+    PhotographyManager.getOneAndExpandUser(props.photoId)
       .then(photoFromApi => setFriendPhoto(photoFromApi))
       .then(() => {
         PhotographyManager.getCommentsForPhoto(
@@ -63,9 +63,13 @@ const FriendsPhotoDetails = props => {
       <>
         <div className="newRoot">
           <div className="detail button-container">
+          <div className="friend-profile-icon-container">
+            <i class="big arrow alternate circle left icon" id="icons" onClick={()=> props.history.push(`/friends/photos/${friendPhoto.user.id}`)}></i>
+            </div>
           </div>
           <div className="view-card">
             <div className="view-card-content">
+         
               <picture className="dets-pic">
                 <img
                   src={friendPhoto.url}

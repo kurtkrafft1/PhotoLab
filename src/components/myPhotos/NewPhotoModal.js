@@ -32,11 +32,12 @@ const NewPhotoModal = props => {
         title: newPhoto.title,
         description: newPhoto.description,
         url: image.url,
-        date: m.format(" MMM ~ Mo ~ YYYY"),
+        date: m.format(" MMM ~ Do ~ YYYY"),
         likes: 1
       };
-      console.log(m);
-      console.log(photo);
+      console.log(m)
+      console.log(m.format(" MMM ~ Do ~ YYYY"));
+   
       setImage({ url: "" });
       PhotographyManager.postNewphoto(photo).then(
         props.toggleModal,

@@ -57,8 +57,8 @@ const MyProfile = props => {
           
             <div className="main-photo">
                 <picture>
-                    <img src={user.profPic} alt="hey, its you!" id="user-profile-picture" />
-                    <i id="icons"className="small edit outline icon" onClick={()=> props.history.push('/editProfilePicture')}></i>
+                    <img src={user.profPic} alt="hey, its you!" id="user-profile-picture" onClick={()=> props.history.push('/editProfilePicture')}/>
+                    {/* <i id="icons"className="small edit outline icon" onClick={()=> props.history.push('/editProfilePicture')}></i> */}
                 </picture>
             </div>
             <div className= "profile-user-info">

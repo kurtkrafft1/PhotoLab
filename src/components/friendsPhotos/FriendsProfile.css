@@ -1,22 +1,26 @@
 .friendInfoContainer{
-    display: flex;
+    /* display: flex;
     padding: 5%;
     padding-top:1% ;
     padding-bottom:1% ;
-    margin-top: 10%;
+  
     background: rgba(116, 115, 115, 0.185) ;  
-    margin-left: 1%;
+    margin-left: 1%; */
+    margin-top: 150px !important;
+    border: 5px solid rgba(204, 203, 203, 0.315);
+    border-radius: 10px;
+    margin: 3px;
+    background: rgba(243, 240, 240, 0.527);
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
 }
 #friend-main-profile-picture{
-    min-width: 500px;
-    max-width: 500px;
+    min-width: 400px;
+    max-width: 400px;
     margin-bottom: 0%;
 }
 
-.profile-header{
-    align-self: center;
-    margin-left: 5%;
-}
 .friend-photos-container{
     width: 100%;
     display: flex;
@@ -31,7 +35,7 @@
 }
 #friends-photo-thumbnail:hover{
     opacity: 0.8;
-    cursor: pointer;
+    cursor: pointer;    
 }
 .friendPhoto{
     margin: 2%;
@@ -41,4 +45,17 @@
 }
 .friendPhoto h5{
     margin-top: 0;
+}
+.friend-profile-icon-container{
+    margin-top: 30px;
+    width: 90%;
+}
+.center-text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#error-image{
+    max-width: 75px;
+    margin-right: 10px;
 }

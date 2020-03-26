@@ -46,11 +46,13 @@ const FriendsPhotoList = props => {
             <picture>
                 <img src={friend.profPic} alt='your friend' id="friend-main-profile-picture" />
             </picture>
+            <div className="profile-user-info">
             <div className="profile-header">
             <h1>{friend.username}</h1>
      
             <div className="about me">
                 <p>{friend.aboutMe}</p>
+            </div>
             </div>
             </div>
         </div>
@@ -71,8 +73,10 @@ return (
         ></i>
     </div>
     <div className="friendInfoContainer">
+        <div className="center-text">
+            <img src="https://cdn.pixabay.com/photo/2017/03/08/14/20/flat-2126885_1280.png" alt="no no" id="error-image" />
         <h1>I am sorry, you are not friends with this person yet.</h1>
-       
+        </div>
     </div>
    
     </>
