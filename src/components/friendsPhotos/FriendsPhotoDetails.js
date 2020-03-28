@@ -44,7 +44,7 @@ const FriendsPhotoDetails = props => {
       });
   }, [refreshComments]);
 
-  if (friendPhoto.description === undefined) {
+  if (friendPhoto.title === undefined) {
     return (
       <div className="card">
         <div className="card-content">
@@ -64,7 +64,7 @@ const FriendsPhotoDetails = props => {
         <div className="newRoot">
           <div className="detail button-container">
           <div className="friend-profile-icon-container">
-            <i class="big arrow alternate circle left icon" id="icons" onClick={()=> props.history.push(`/friends/photos/${friendPhoto.user.id}`)}></i>
+            <i className="big arrow alternate circle left icon" id="icons" onClick={()=> props.history.push(`/friends/photos/${friendPhoto.user.id}`)}></i>
             </div>
           </div>
           <div className="view-card">
