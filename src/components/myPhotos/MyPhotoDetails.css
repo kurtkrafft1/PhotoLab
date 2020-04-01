@@ -103,3 +103,31 @@
       opacity: 0.8;
       cursor: pointer;
   }
+
+  @media only screen and (max-width: 800px) {
+
+    .detail{
+        margin-top: 60px;
+    }
+    .view-card-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .detail-card-photo{
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .comment-container{
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .comment-card-container{
+        height: 300px;
+        width: 300px;
+        overflow: scroll;
+    }
+
+  }

@@ -15,7 +15,7 @@ const ExploreOnePhotoModal = props => {
             </picture>
         }>
                      <Modal.Content id="View-photo-modal">
-            <i className="window close outline icon" onClick={props.togglePhotoModal}></i>
+            <i className="window close outline icon" id="flex-end" onClick={props.togglePhotoModal}></i>
             <Modal.Header id="view-modal-header">{props.photo.title}</Modal.Header>
             <div className="modal-photo-close-up">
                 <picture>

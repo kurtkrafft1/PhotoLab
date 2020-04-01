@@ -53,3 +53,16 @@
 .left-or-right-buttons{
     margin-top: 1%;
 }
+
+@media only screen and (max-width: 800px) {
+
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-header{
+        margin-top: 90px;
+    }
+}
