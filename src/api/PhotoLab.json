@@ -100,15 +100,6 @@
       "date": 1584129968310
     },
     {
-      "id": 19,
-      "title": "Walls test",
-      "description": "Austin, TX",
-      "url": "https://res.cloudinary.com/dgfnzsyga/image/upload/v1584643974/photoLab/uenednvgvlv2pt2emdfm.jpg",
-      "date": 1584644012268,
-      "likes": 1,
-      "userId": 1
-    },
-    {
       "userId": 12,
       "title": "asdf",
       "description": "asdf",
@@ -764,11 +755,6 @@
       "id": 12
     },
     {
-      "photoId": 19,
-      "userId": 1,
-      "id": 13
-    },
-    {
       "photoId": 5,
       "userId": 1,
       "id": 15
@@ -782,11 +768,6 @@
       "photoId": 30,
       "userId": 1,
       "id": 17
-    },
-    {
-      "photoId": 19,
-      "userId": 2,
-      "id": 18
     },
     {
       "photoId": 38,
@@ -817,11 +798,6 @@
       "photoId": 35,
       "userId": 4,
       "id": 24
-    },
-    {
-      "photoId": 19,
-      "userId": 4,
-      "id": 25
     },
     {
       "photoId": 33,
@@ -857,6 +833,11 @@
       "photoId": 56,
       "userId": 19,
       "id": 32
+    },
+    {
+      "photoId": 40,
+      "userId": 1,
+      "id": 33
     }
   ],
   "comments": [
@@ -1017,12 +998,6 @@
       "photoId": 12
     },
     {
-      "message": "Hey this is cool",
-      "photoId": 19,
-      "userId": 1,
-      "id": 37
-    },
-    {
       "message": "Did you just confirm that you were in the matrix?",
       "photoId": 31,
       "userId": 2,
@@ -1147,6 +1122,12 @@
       "userId": 19,
       "message": "boo yeah!!!!!!",
       "photoId": 34
+    },
+    {
+      "message": "test",
+      "photoId": 44,
+      "userId": 1,
+      "id": 60
     }
   ]
 }

@@ -86,3 +86,21 @@
     width: 90%;
     margin-top: 5%;
 }
+
+@media only screen and (max-width: 800px) {
+    .center-page{
+        margin-top: 90px;
+        display: flex;
+        flex-direction: column;    
+        align-items: center;
+        /* justify-content: space-evenly; */
+    }
+    .friend-container{
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    .friend-search-container{
+        width: 80%;
+        margin-left: 0;
+    }
+}
