@@ -11,7 +11,7 @@ const FriendRequestCard = props => {
    
     return (
         <>
-        <div className="friend-card">
+        <div className="friend-card-request">
             <div className="request-photo-card">
                 <picture className="prof-pic-picture">
                     <img src={requestUser.profPic} alt='They added you' id="request-user-prof-pic" />

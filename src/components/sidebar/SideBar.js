@@ -21,6 +21,9 @@ const Sidebar= props => {
             <a className = "menu-item" href="/explore">
                 Explore
             </a>
+            <a className = "menu-item" href="/myprofile">
+                My Profile
+            </a>
             <a className = "menu-item" href="/" onClick={handleLogout}>
                 Logout
             </a>
