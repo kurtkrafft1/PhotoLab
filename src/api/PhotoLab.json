@@ -361,15 +361,6 @@
       "id": 61
     },
     {
-      "id": 62,
-      "title": "Me",
-      "description": "Me Me Me Me Me ME ME ME ME ME",
-      "url": "https://res.cloudinary.com/dgfnzsyga/image/upload/v1585318161/photoLab/nvbvwvtnngcn5jgicwck.jpg",
-      "date": " Mar ~ 27th ~ 2020",
-      "likes": 1,
-      "userId": 19
-    },
-    {
       "userId": 19,
       "title": "Me ",
       "description": "Me Me Me",
@@ -704,14 +695,8 @@
     {
       "activeUserId": 19,
       "userId": 1,
-      "statusId": 1,
+      "statusId": 2,
       "id": 43
-    },
-    {
-      "activeUserId": 1,
-      "userId": 19,
-      "statusId": 1,
-      "id": 44
     }
   ],
   "statuses": [
@@ -838,6 +823,16 @@
       "photoId": 40,
       "userId": 1,
       "id": 33
+    },
+    {
+      "photoId": 30,
+      "userId": 19,
+      "id": 34
+    },
+    {
+      "photoId": 47,
+      "userId": 19,
+      "id": 35
     }
   ],
   "comments": [
@@ -1128,6 +1123,12 @@
       "photoId": 44,
       "userId": 1,
       "id": 60
+    },
+    {
+      "message": "This is cool",
+      "photoId": 34,
+      "userId": 19,
+      "id": 61
     }
   ]
 }

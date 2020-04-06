@@ -114,6 +114,56 @@
     right: 0;
     bottom: 80px;
     max-width: 600px !important;
+  }
+  .friend-card-request{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    /* border: solid 2px rgba(131, 128, 128, 0.274); */
+    padding: 2%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    /* background-image: linear-gradient( rgba(184, 183, 183, 0.397), rgba(248, 246, 246, 0.281)); */
+    background-color: rgba(230, 228, 228, 0.527);
+    -webkit-box-shadow: 1px 1px 1px 1px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 1px 1px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 1px 1px #ccc;
+    height: 100px;
+}
 
+  @media only screen and (max-width: 800px) {
+    .profile-edit-icon{
+        margin-top: 60px;
+    }
 
+    #user-profile-picture {
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .profile-container{
+        border: 5px solid rgba(204, 203, 203, 0.315);
+        border-radius: 10px;
+        margin: 3px;
+        background: rgba(243, 240, 240, 0.527);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+    .accept-user-or-deny-user{
+        width: 40%;
+        align-self: flex-end;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 20% !important;
+       
+    }  
+    .friend-card-request{
+        width: 100%;
+    }
+    .request-user-name{
+        margin-top: 15px;
+        margin-left: 5px;
+    } 
   }
