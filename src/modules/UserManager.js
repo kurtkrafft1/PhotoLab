@@ -1,7 +1,7 @@
 // const remoteUrl = "http://localhost:5002/"
 const remoteUrl = () => {
     if(window.location.href.includes('com')){
-      return 'https://photolab-1.herokuapp.com'
+      return 'https://photolab-1.herokuapp.com/'
     } else {
       return "http://localhost:5002/";
     }
