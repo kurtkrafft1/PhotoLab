@@ -28,7 +28,7 @@ Steps to get started:
 1. cd into `src/api`  folder
 1. enter `json-server -p 5002 -w photoLab.json`
 1. press ctrl+t in your terminal and direct to the src folder of the Photolab-Real directory
-1.  enter `npm start`
+1.  enter `npm install`
 1. wait, when all the dependencies are loaded you may enter `npm start` and view the project
 1. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -61,6 +61,16 @@ We utilized all skills and concepts learned up to this point in our time here at
 1. Modular code
 1. Semantic HTML
 1. [Valid HTML5](https://validator.w3.org/)
+
+## ACCOUNT INFO
+* If you like to view a profile that has already been set up with friends etc here are the "login" information
+* email: kurt@kurt.com 
+* username : JazzMasterKrafft
+
+* if you want to send a friend request to someone and view that feature you can delete Zoolander from JazzMasterKrafft friends list and login as him. His credentials are as followed 
+* email : derek@email.com
+* username: Zoolander
+
 
 ## Database Diagram
 !![PhotoLab Diagram](./LabDiagram.png)
